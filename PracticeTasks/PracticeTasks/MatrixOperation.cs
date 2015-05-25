@@ -25,7 +25,6 @@ namespace PracticeTasks
             matrix2.WriteMatrix("Matrix 2: ");
             matrix3.WriteMatrix("Matrix Result: ");
         }
-
     }
 
     public class MatrixNode
@@ -34,6 +33,12 @@ namespace PracticeTasks
         int _row;
         int _col;
 
+        /// <summary>
+        /// MatrixNode constructor
+        /// </summary>
+        /// <param name="value">Matrix node value</param>
+        /// <param name="row">Matrix node x coordinate</param>
+        /// <param name="col">Matrix node y coordinate</param>
         public MatrixNode(int value, int row, int col)
         {
             _value = value;
@@ -65,6 +70,12 @@ namespace PracticeTasks
             }
         }
 
+        /// <summary>
+        /// Overriden ToString() from the System.Object
+        /// Return a string with only the value of the matrix node
+        /// But not its coordinate
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return _value.ToString();
@@ -76,12 +87,24 @@ namespace PracticeTasks
         LList<MatrixNode> _list;
         int _matrixSize;
 
+        /// <summary>
+        /// Matrix Constructor
+        /// Takes a size parameter and establish a new empty LList
+        /// </summary>
+        /// <param name="size"></param>
         public Matrix(int size)
         {
             _matrixSize = size;
             _list = new LList<MatrixNode>();
         }
 
+        /// <summary>
+        /// Matrix Constructor
+        /// Takes a fileName parameter
+        /// Read and assign size from the file
+        /// Add nodes into new established LList base on the file content
+        /// </summary>
+        /// <param name="fileName"></param>
         public Matrix(string fileName)
         {
             StreamReader file = new StreamReader(fileName);
@@ -125,6 +148,12 @@ namespace PracticeTasks
             }
         }
 
+        /// <summary>
+        /// Overriden ToString() method
+        /// Assign all none-zero values of the matrix into one string
+        /// use space to split each other
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             var current = _list.First;
@@ -139,11 +168,21 @@ namespace PracticeTasks
             return result;
         }
 
+        /// <summary>
+        /// Add a new node to the matrix list
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="row"></param>
+        /// <param name="col"></param>
         public void AddNode(int value, int row, int col)
         {
             _list.AddLast(new MatrixNode(value, row, col));
         }
 
+        /// <summary>
+        /// Print whole matrix by some defined format
+        /// </summary>
+        /// <param name="header"></param>
         public void WriteMatrix(string header)
         {
             string firstLine = "";
@@ -179,6 +218,13 @@ namespace PracticeTasks
 
         }
 
+        /// <summary>
+        /// A static method, used to add 2 matrices
+        /// It returns a new matrix which represent the addition result of those 2 matrices
+        /// </summary>
+        /// <param name="matrix1"></param>
+        /// <param name="matrix2"></param>
+        /// <returns></returns>
         public static Matrix AddMatrix(Matrix matrix1, Matrix matrix2)
         {
             //return null if matrix sizes do not match
