@@ -431,7 +431,7 @@ namespace YuGeneric
         /// Override from System.Object, convert the list to a string
         /// </summary>
         /// <returns></returns>
-        public override string ToString()
+        public string ToString(string spliter = ",")
         {
             LListNode<T> current = _head;
             string result = "";
@@ -440,7 +440,7 @@ namespace YuGeneric
             {
                 result += current.Value.ToString();
                 if(current.Next !=null)
-                    result += ",";
+                    result += spliter;
                 current = current.Next;
             }
 

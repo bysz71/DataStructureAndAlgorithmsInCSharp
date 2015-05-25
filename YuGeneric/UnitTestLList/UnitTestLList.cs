@@ -67,14 +67,14 @@ namespace UnitTestYuGeneric
             var list1 = new LList<int>();
             list1.AddLast(1);
             list1.AddLast(2);
-        //    Console.WriteLine("list1: " + list1.ToString());
+            Console.WriteLine("list1: " + list1.ToString());
 
-        //    var list2 = new LList<int>();
-        //    var node1 = new LListNode<int>(1);
-        //    var node2 = new LListNode<int>(2);
-        //    list2.AddLast(node1);
-        //    list2.AddLast(node2);
-        //    Console.WriteLine("list2: " + list2.ToString());
+            var list2 = new LList<int>();
+            var node1 = new LListNode<int>(1);
+            var node2 = new LListNode<int>(2);
+            list2.AddLast(node1);
+            list2.AddLast(node2);
+            Console.WriteLine("list2: " + list2.ToString());
         }
 
         [TestMethod]
