@@ -506,7 +506,10 @@ namespace YuGeneric
             if (list1.IsEmpty())
             {
                 Console.WriteLine("list1 is empty");
-                list1 = list2;
+                //list1 = list2;
+                list1.First = list2.First;
+                list1.Last = list2.Last;
+                Console.WriteLine("list1 now refer to list2");
                 return;
             }
             if (!list2.IsEmpty())

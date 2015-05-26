@@ -278,6 +278,11 @@ namespace UnitTestYuGeneric
             Console.WriteLine(listEmpty.ToString());
             Assert.AreEqual(listEmpty.First.Value, 0);
             Assert.AreEqual(listEmpty.Last.Value, 14);
+
+            //var list3 = new LList<int>();
+            //list3 = list1;
+            //Assert.AreEqual(list3.First.Value, 0);
+            //Assert.AreEqual(list3.Last.Value, 14);
         }
     }
 }
