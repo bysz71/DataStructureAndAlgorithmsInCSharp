@@ -293,19 +293,43 @@ namespace YuGeneric
         {
             if (_head == null)
                 return false;
-            var current = _head;
-            while (current.Next != null)
+
+            if (_head == _tail)
             {
-                if (EqualityComparer<T>.Default.Equals(current.Next.Value, value))
+                if (EqualityComparer<T>.Default.Equals(_head.Value, value))
                 {
-                    current.Next = current.Next.Next;
+                    this.Clear();
                     return true;
                 }
-
-                current = current.Next;
+                else
+                {
+                    return false;
+                }
             }
-
-            return false;
+            else if (EqualityComparer<T>.Default.Equals(_head.Value, value))
+            {
+                this.RemoveFirst();
+                return true;
+            }
+            else if (EqualityComparer<T>.Default.Equals(_tail.Value, value))
+            {
+                this.RemoveLast();
+                return true;
+            }
+            else
+            {
+                var prev = _head;
+                while (prev.Next != null)
+                {
+                    if (EqualityComparer<T>.Default.Equals(prev.Next.Value, value))
+                    {
+                        prev.Next = prev.Next.Next;
+                        return true;
+                    }
+                    prev = prev.Next;
+                }
+                return false;
+            }
         }
 
         /// <summary>
@@ -318,26 +342,35 @@ namespace YuGeneric
             if (_head == null)
                 return false;
 
-            var current = _head;
-            while (current.Next != null)
+            if (_head == _tail && ReferenceEquals(_head, node))
             {
-                if (Object.ReferenceEquals(current.Next, node))
-                {
-                    if (current.Next == _tail)
-                    {
-                        _tail = current;
-                        current.Next = null;
-                    }
-                    else
-                    {
-                        current.Next = current.Next.Next;
-                    }
-                    return true;
-                }
-                current = current.Next;
+                this.Clear();
+                return true;
             }
-
-            return false;
+            else if (ReferenceEquals(_head, node))
+            {
+                this.RemoveFirst();
+                return true;
+            }
+            else if (ReferenceEquals(_tail,node))
+            {
+                this.RemoveLast();
+                return true;
+            }
+            else
+            {
+                var prev = _head;
+                while (prev.Next != null)
+                {
+                    if (ReferenceEquals(prev, node))
+                    {
+                        prev.Next = prev.Next.Next;
+                        return true;
+                    }
+                    prev = prev.Next;
+                }
+                return false;
+            }
         }
 
         /// <summary>
@@ -369,21 +402,21 @@ namespace YuGeneric
             if (_head == null)
                 return false;
 
-            if (_head.Next == null)
+            if (_head == _tail)
             {
                 _head = null;
                 _tail = null;
                 return true;
             }
 
-            var current = _head;
-            while (current.Next.Next != null)
+            var prev = _head;
+            while (prev.Next != _tail)
             {
-                current = current.Next;
+                prev = prev.Next;
             }
 
-            current.Next = null;
-            _tail = current;
+            prev.Next = null;
+            _tail = prev;
             return true;
         }
 
@@ -431,7 +464,7 @@ namespace YuGeneric
         /// Override from System.Object, convert the list to a string
         /// </summary>
         /// <returns></returns>
-        public string ToString(string spliter = ",")
+        public override string ToString()
         {
             LListNode<T> current = _head;
             string result = "";
@@ -439,12 +472,48 @@ namespace YuGeneric
             while (current != null)
             {
                 result += current.Value.ToString();
-                if(current.Next !=null)
-                    result += spliter;
+                if (current.Next != null)
+                    result += ",";
                 current = current.Next;
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Determine if the list is empty
+        /// </summary>
+        /// <returns></returns>
+        public bool IsEmpty()
+        {
+            if (_head == _tail && _head == null)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        /// <summary>
+        /// concatenate 2 list
+        /// list1 now access to the head and tail of new list
+        /// list2 pointers keep its original position
+        /// </summary>
+        /// <param name="list1"></param>
+        /// <param name="list2"></param>
+        public static void Concatenate(LList<T> list1, LList<T> list2)
+        {
+            if (list1.IsEmpty())
+            {
+                Console.WriteLine("list1 is empty");
+                list1 = list2;
+                return;
+            }
+            if (!list2.IsEmpty())
+            {
+                list1.Last.Next = list2.First;
+                list1.Last = list2.Last;
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using YuGeneric;
 
 
@@ -142,29 +143,40 @@ namespace UnitTestYuGeneric
         public void LListRemove()
         {
             var list = new LList<int>();
+            Console.WriteLine("test void");
+            Console.WriteLine(list.RemoveFirst());
+            Console.WriteLine(list.RemoveLast());
+            Console.WriteLine(list.ToString());
+
+            list.AddFirst(10);
+            Console.WriteLine("test 1 item list remove first");
+            Console.WriteLine(list.RemoveFirst());
+            Console.WriteLine(list.ToString());
+
+            list.AddFirst(10);
+            Console.WriteLine("test 1 item list remove last");
+            Console.WriteLine(list.RemoveLast());
+
+            list.AddFirst(10);
+            Console.WriteLine("test 1 item list remove value");
+            Console.WriteLine(list.Remove(10));
+            Console.WriteLine(list.ToString());
+
+            list.AddFirst(10);
+            list.AddFirst(11);
+            list.AddFirst(11);
+            Console.WriteLine("test multi item list remove first item using remove(T) and remove first");
+            Console.WriteLine(list.Remove(11));
+            Console.WriteLine(list.ToString());
+            Console.WriteLine(list.RemoveFirst());
+            Console.WriteLine(list.ToString());
+
             for (int i = 0; i < 10; i++)
                 list.AddLast(i);
-            list.AddLast(100);
-            list.AddLast(100);
-            Console.WriteLine(list.ToString());
-            list.Remove(100);
-            Console.WriteLine(list.ToString());
-            list.RemoveFirst();
-            Console.WriteLine(list.ToString());
-            list.RemoveLast();
-            Console.WriteLine(list.ToString());
 
-            var list2 = new LList<int>();
-            list2.AddLast(1);
-            list2.RemoveFirst();
-            Assert.ReferenceEquals(list2.First, list2.Last);
-            Assert.ReferenceEquals(list2.First, null);
-
-            var list3 = new LList<int>();
-            list3.AddLast(1);
-            list3.AddLast(2);
-            list3.RemoveLast();
-            Assert.ReferenceEquals(list3.First, list3.Last);
+            list.Remove(0);
+            list.Remove(10);
+            Console.WriteLine(list.First.Value + ";" + list.Last.Value);
         }
 
         [TestMethod]
@@ -225,6 +237,47 @@ namespace UnitTestYuGeneric
             list.Clear();
             Assert.ReferenceEquals(list, null);
             Assert.AreEqual(list.Count(), 0);
+        }
+
+        [TestMethod]
+        public void LListIsEmpty(){
+            var list = new LList<int>();
+            Assert.AreEqual(list.IsEmpty(), true);
+            Assert.ReferenceEquals(list.First, list.Last);
+            list.AddFirst(10);
+            Assert.AreEqual(list.IsEmpty(), false);
+            Assert.ReferenceEquals(list.First, list.Last);
+            list.Remove(10);
+            Assert.ReferenceEquals(list.IsEmpty(), true);
+        }
+
+        [TestMethod]
+        public void LListConcatenate()
+        {
+            var list1 = new LList<int>();
+            for (int i = 0; i < 5; i++)
+            {
+                list1.AddLast(i);
+            }
+            var list2 = new LList<int>();
+            for (int i = 10; i < 15; i++)
+            {
+                list2.AddLast(i);
+            }
+
+            LList<int>.Concatenate(list1, list2);
+            Console.WriteLine(list1.ToString());
+            Assert.AreEqual(list1.First.Value, 0);
+            Assert.AreEqual(list1.Last.Value, 14);
+            Assert.AreEqual(list2.First.Value, 10);
+            Assert.AreEqual(list2.Last.Value, 14);
+
+            Console.WriteLine("---list1 empty state---");
+            var listEmpty = new LList<int>();
+            LList<int>.Concatenate(listEmpty, list1);
+            Console.WriteLine(listEmpty.ToString());
+            Assert.AreEqual(listEmpty.First.Value, 0);
+            Assert.AreEqual(listEmpty.Last.Value, 14);
         }
     }
 }
