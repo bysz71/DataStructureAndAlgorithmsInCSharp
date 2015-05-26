@@ -275,17 +275,97 @@ namespace UnitTestYuGeneric
             //Console.WriteLine("---list1 empty state---");
             var listEmpty = new LList<int>();
             LList<int>.Concatenate(ref listEmpty, ref list1);
-            Console.WriteLine(listEmpty.ToString());
-
-            var v = listEmpty.First.Value;
-
             Assert.AreEqual(listEmpty.First.Value, 0);
             Assert.AreEqual(listEmpty.Last.Value, 14);
+        }
 
-            //var list3 = new LList<int>();
-            //list3 = list1;
-            //Assert.AreEqual(list3.First.Value, 0);
-            //Assert.AreEqual(list3.Last.Value, 14);
+        [TestMethod]
+        public void LListReverse1()
+        {
+            var list = new LList<int>();
+            for (int i = 0; i < 5; i++)
+            {
+                list.AddLast(i);
+            }
+            LList<int>.Reverse1(ref list);
+            Assert.AreEqual(list.ToString(),"4,3,2,1,0");
+
+            var list1 = new LList<int>();
+            LList<int>.Reverse1(ref list1);
+            Assert.AreEqual(list1.IsEmpty(), true);
+
+            list1.AddLast(1);
+            LList<int>.Reverse1(ref list1);
+            Assert.AreEqual(list1.ToString(), "1");
+        }
+
+        [TestMethod]
+        public void LListFindByPosition()
+        {
+            var list = new LList<string>();
+            Assert.ReferenceEquals(list.FindByPosition(1), null);
+            list.AddLast("zero");
+            list.AddLast("one");
+            list.AddLast("two");
+            Console.WriteLine(list.Count());
+            Assert.ReferenceEquals(list.FindByPosition(3), null);
+            Assert.AreEqual(list.FindByPosition(0).Value, "zero");
+            Assert.AreEqual(list.FindByPosition(1).Value, "one");
+            Assert.AreEqual(list.FindByPosition(2).Value, "two");
+        }
+
+        [TestMethod]
+        public void LListReverse2()
+        {
+            var list = new LList<int>();
+            for (int i = 0; i < 5; i++)
+            {
+                list.AddLast(i);
+            }
+            LList<int>.Reverse2(list);
+            Assert.AreEqual(list.ToString(), "4,3,2,1,0");
+
+            list.RemoveFirst();
+            LList<int>.Reverse2(list);
+            Assert.AreEqual(list.ToString(), "0,1,2,3");
+
+            var list2 = new LList<int>();
+            list2.AddLast(1);
+            Assert.AreEqual(list2.ToString(), "1");
+        }
+
+        [TestMethod]
+        public void LListReverse3()
+        {
+            var list = new LList<int>();
+            list.AddLast(-1);
+            LList<int>.Reverse3(list);
+            Assert.AreEqual(list.ToString(), "-1");
+            for (int i = 0; i < 10; i++)
+            {
+                list.AddLast(i);
+            }
+            LList<int>.Reverse3(list);
+            Assert.AreEqual(list.ToString(), "9,8,7,6,5,4,3,2,1,0,-1");
+        }
+
+        [TestMethod]
+        public void LListSplit()
+        {
+            var list = new LList<int>();
+            LList<int> result =LList<int>.Split(list, 1);
+            Assert.ReferenceEquals(result, null);
+
+            for (int i = 0; i < 10; i++)
+            {
+                list.AddLast(i);
+            }
+            result = LList<int>.Split(list, 100);
+            Assert.ReferenceEquals(result, null);
+
+            result = LList<int>.Split(list, 5);
+            Assert.AreEqual(list.ToString(), "0,1,2,3,4,5");
+            Assert.AreEqual(result.ToString(), "6,7,8,9");
         }
     }
 }

@@ -506,9 +506,9 @@ namespace YuGeneric
             if (list1.IsEmpty())
             {
                 Console.WriteLine("list1 is empty");
-                //list1 = list2;
-                list1.First = list2.First;
-                list1.Last = list2.Last;
+                list1 = list2;
+                //list1.First = list2.First;
+                //list1.Last = list2.Last;
                 Console.WriteLine("list1 now refer to list2");
                 return;
             }
@@ -517,6 +517,128 @@ namespace YuGeneric
                 list1.Last.Next = list2.First;
                 list1.Last = list2.Last;
             }
+        }
+
+        /// <summary>
+        /// Reverse a list
+        /// Using strategy 1: create a new list and assign origin to this list
+        /// </summary>
+        /// <param name="list"></param>
+        public static void Reverse1(ref LList<T> list)
+        {
+            if (list.IsEmpty())
+                return;
+
+            var temp = new LList<T>();
+            var current = list.First;
+            while (current != null)
+            {
+                temp.AddFirst(current.Value);
+                current = current.Next;
+            }
+            list = temp;
+        }
+
+        /// <summary>
+        /// return the node at "i"th position
+        /// return null if empty list or list not long enough
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        public LListNode<T> FindByPosition(int i)
+        {
+            if (_head == null)
+            {
+                Console.WriteLine("empty list return null");
+                return null;
+            }
+            var current = _head;
+            int count = 0;
+            while (current != null)
+            {
+                if (count == i)
+                {
+                    return current;
+                }
+
+                current = current.Next;
+                count++;
+            }
+            Console.WriteLine("index overflow return null");
+            return null;
+        }
+
+        /// <summary>
+        /// Reverse strategy 2
+        /// traverse from (first,last) , (first+1,last-1) ... swap each other's value
+        /// </summary>
+        public static void Reverse2(LList<T> list)
+        {
+            if (list.IsEmpty())
+                return;
+
+            T temp;
+            for (int i = 0; i < list.Count() / 2; i++)
+            {
+                temp = list.FindByPosition(i).Value;
+                list.FindByPosition(i).Value = list.FindByPosition(list.Count() - 1 - i).Value;
+                list.FindByPosition(list.Count() - 1 - i).Value = temp;
+            }
+        }
+
+        /// <summary>
+        /// reverse strategy 3;
+        /// change each node's pointer from "point to next" to "point to prev";
+        /// it needs to declare 3 pointers for different purpose;
+        /// a "firstHolder" to hold the first item;
+        /// a "current" to point to the node whose "Next" needs to redirect;
+        /// a "pointerHolder" to point to the node next to the current node, so once current redirect, this node still can be accessed;
+        /// see as a "a b c" sliding window slide through the list;
+        /// once "b" finishes redirection, whole window slide one node;
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static void Reverse3(LList<T> list)
+        {
+            if (list.IsEmpty() || list.Count() == 1)
+                return;
+            var firstHolder = list.First;
+            var current = list.First.Next;
+            LListNode<T> pointerHolder;
+            while (current != null)
+            {
+                pointerHolder = current.Next;
+                current.Next = list.First;
+                list.First = current;
+                current = pointerHolder;
+            }
+            firstHolder.Next = null;
+            list.Last = firstHolder;
+        }
+
+        /// <summary>
+        /// Split a list by index
+        /// Original list will end at the index
+        /// The rest of list will be return as a new list
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        public static LList<T> Split(LList<T> list , int i)
+        {
+            if (list.IsEmpty() || list.Count() == 1)
+                return null;
+            LList<T> result = new LList<T>();
+            var temp = list.FindByPosition(i);
+            if (temp == null)
+                return null;
+            result.First = temp.Next;
+            if (i == list.Count() - 1)
+                result.Last = temp.Next;
+            else
+                result.Last = list.Last;
+            temp.Next = null;
+            return result;
         }
     }
 }
