@@ -265,20 +265,17 @@ namespace UnitTestYuGeneric
                 list2.AddLast(i);
             }
 
-            LList<int>.Concatenate(ref list1, ref list2);
+            LList<int>.Concatenate(list1, list2);
             Console.WriteLine(list1.ToString());
             Assert.AreEqual(list1.First.Value, 0);
             Assert.AreEqual(list1.Last.Value, 14);
             Assert.AreEqual(list2.First.Value, 10);
             Assert.AreEqual(list2.Last.Value, 14);
 
-            //Console.WriteLine("---list1 empty state---");
+            Console.WriteLine("---list1 empty state---");
             var listEmpty = new LList<int>();
-            LList<int>.Concatenate(ref listEmpty, ref list1);
+            LList<int>.Concatenate(listEmpty, list1);
             Console.WriteLine(listEmpty.ToString());
-
-            var v = listEmpty.First.Value;
-
             Assert.AreEqual(listEmpty.First.Value, 0);
             Assert.AreEqual(listEmpty.Last.Value, 14);
         }

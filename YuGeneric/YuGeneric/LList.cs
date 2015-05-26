@@ -501,7 +501,7 @@ namespace YuGeneric
         /// </summary>
         /// <param name="list1"></param>
         /// <param name="list2"></param>
-        public static void Concatenate(ref LList<T> list1, ref LList<T> list2)
+        public static void Concatenate(LList<T> list1, LList<T> list2)
         {
             if (list1.IsEmpty())
             {

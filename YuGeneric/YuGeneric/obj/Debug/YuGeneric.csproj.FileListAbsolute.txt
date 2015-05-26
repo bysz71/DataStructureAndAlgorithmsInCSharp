@@ -3,8 +3,3 @@ C:\Github\DataStructureAndAlgorithms\YuGeneric\YuGeneric\bin\Debug\YuGeneric.pdb
 C:\Github\DataStructureAndAlgorithms\YuGeneric\YuGeneric\obj\Debug\YuGeneric.csprojResolveAssemblyReference.cache
 C:\Github\DataStructureAndAlgorithms\YuGeneric\YuGeneric\obj\Debug\YuGeneric.dll
 C:\Github\DataStructureAndAlgorithms\YuGeneric\YuGeneric\obj\Debug\YuGeneric.pdb
-H:\DataStructureAndAlgorithms\YuGeneric\YuGeneric\bin\Debug\YuGeneric.dll
-H:\DataStructureAndAlgorithms\YuGeneric\YuGeneric\bin\Debug\YuGeneric.pdb
-H:\DataStructureAndAlgorithms\YuGeneric\YuGeneric\obj\Debug\YuGeneric.csprojResolveAssemblyReference.cache
-H:\DataStructureAndAlgorithms\YuGeneric\YuGeneric\obj\Debug\YuGeneric.dll
-H:\DataStructureAndAlgorithms\YuGeneric\YuGeneric\obj\Debug\YuGeneric.pdb
