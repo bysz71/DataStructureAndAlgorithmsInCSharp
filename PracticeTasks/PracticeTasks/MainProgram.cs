@@ -11,7 +11,8 @@ namespace PracticeTasks
     {
         static void Main(string[] args)
         {
-            MatrixOperation.MatrixOperationGo();
+            ReversePolishNotationEvaluation.Go();
+            //RPNEvaluator.calc(10, 0, "/");
         }
     }
 }

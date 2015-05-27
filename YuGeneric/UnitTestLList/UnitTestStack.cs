@@ -36,8 +36,6 @@ namespace UnitTestYuGeneric
         public void StackTop()
         {
             var stack = new Stack<int>();
-            Assert.ReferenceEquals(stack.Top, null);
-
             stack.Push(10);
             stack.Push(20);
             Assert.AreEqual(stack.Top.Value, 20);

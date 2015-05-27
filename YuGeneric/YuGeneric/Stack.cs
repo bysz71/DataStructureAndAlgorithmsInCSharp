@@ -14,7 +14,7 @@ namespace YuGeneric
         {
             get
             {
-                return _top;
+                return _top;  
             }
             set
             {
