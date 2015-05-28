@@ -38,15 +38,12 @@ namespace UnitTestYuGeneric
         {
             var queue = new Queue<int>();
             Assert.ReferenceEquals(queue.Front, null);
-            Assert.ReferenceEquals(queue.Rear, null);
 
             queue.Join(10);
             Assert.AreEqual(queue.Front.Value, 10);
-            Assert.AreEqual(queue.Rear.Value, 10);
 
             queue.Join(20);
             Assert.AreEqual(queue.Front.Value, 20);
-            Assert.AreEqual(queue.Rear.Value, 10);
         }
 
         [TestMethod]

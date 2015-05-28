@@ -60,18 +60,6 @@ namespace YuGeneric
             }
         }
 
-        public QueueNode<T> Rear
-        {
-            get
-            {
-                return _rear;
-            }
-            set
-            {
-                _rear = value;
-            }
-        }
-
         public bool IsEmpty()
         {
             if (_front == null && _rear == null)
