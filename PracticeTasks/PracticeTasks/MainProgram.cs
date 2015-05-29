@@ -11,8 +11,7 @@ namespace PracticeTasks
     {
         static void Main(string[] args)
         {
-            ReversePolishNotationEvaluation.Go();
-            //RPNEvaluator.calc(10, 0, "/");
+            BigNumberAddition.Run();
         }
     }
 }
