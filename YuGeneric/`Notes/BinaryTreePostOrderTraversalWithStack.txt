@@ -1,0 +1,25 @@
+Post Order Traverasl With Stack
+	--2 buffers, 1 stack
+	--2 tiers of loops
+	--tier 0 loop, deals a left side top down straight line, contains 2 tier 1 loops
+		--prints the end node of the straight line
+		--use stack to store up to the latest mother node with a right child
+		--use temp1 to buffer the right child as root of next turn
+		-------------------------------------------------------------------------------------------------------------------------------------	
+		--tier 1, 1st loop
+			--temp1 reaches the end node of straight line
+			--stack stores up to the mother of this end node
+		-------------------------------------------------------------------------------------------------------------------------------------
+		--tier 1, 2nd loop
+			--use stack and temp1 to back track -> through nodes without right child -> reaches mother with right child
+		  	  buffer mother in temp1; buffer left child in temp2
+		-------------------------------------------------------------------------------------------------------------------------------------
+		--temp1 (mother node with right child) push back to stack, temp1 is now the right child		
+		-------------------------------------------------------------------------------------------------------------------------------------
+			--temp1 is the main processing buffer
+			--temp2 always look like a left child, but it is actually the previous content of temp1
+			--loop2 uses 2 conditions, 1st means loop only stop at mother with right child
+			--2nd condition means loop will continue if temp1 is poping the node from last tier straight line
+			--so when temp1 jumped back to last straight line, loop continues
+
+	
