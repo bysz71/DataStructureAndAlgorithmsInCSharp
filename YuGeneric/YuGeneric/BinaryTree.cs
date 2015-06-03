@@ -135,6 +135,22 @@ namespace YuGeneric
             Console.WriteLine();
         }
 
+        /// <summary>
+        /// "One Fish Bone At A Loop", it deals one "fishbone" at a loop--
+        /// a fish bone is a structure from top to most left child--
+        /// the fish bone is pushed follow the order "RightChild->Mother->RightChild->Mother"--
+        /// once a fish bone is finished, temp pointer will move to the latest right child||
+        /// structure:
+        /// outer loop{
+        /// --inner loop1, stack stores up to most left child, temp to null
+        /// --temp buffers Top and Pop it;
+        /// --inner loop2, back track to latest node with right child, temp buffers the node, Top holds the right child
+        /// --print the node,
+        /// --if stack not empty, move temp pointer to the right child, start next outer loop
+        /// --if stack is empty(node reaches root, with no right child), temp points null
+        /// }
+        /// </summary>
+        /// <param name="node"></param>
         public static void InOrderWithStack(BinaryTreeNode<T> node)
         {
             var s = new Stack<BinaryTreeNode<T>>();
@@ -143,12 +159,6 @@ namespace YuGeneric
             {
                 while (temp != null)
                 {
-                    //--for 1st turn, temp is the root
-                    //--for rest turns, temp was the right child from last turn
-                    //--now seen as a sub root
-                    //--if it has childs, push right child first
-                    //--then himself back to stack
-                    //--repeatly do this until reach most left child in this branch
                     if (temp.Right != null) {
                         s.Push(temp.Right);
                     }
@@ -156,13 +166,9 @@ namespace YuGeneric
                     temp = temp.Left;
                 }
 
-                //Pop a node from the stack, hold on temp
                 temp = s.Top.Value;
                 s.Pop();
 
-                //print temp, update temp to a new poped node
-                //untill reach a node with right child
-                //temp hold this node, stack Top hold its right child
                 while (!s.IsEmpty() && temp.Right == null)
                 {
                     Console.Write(temp.Value + " ");
@@ -170,10 +176,8 @@ namespace YuGeneric
                     s.Pop();
                 }
 
-                //print that node
                 Console.Write(temp.Value + " ");
 
-                //pop the right child node from the stack and give to temp
                 if (!s.IsEmpty())
                 {
                     temp = s.Top.Value;
@@ -185,6 +189,7 @@ namespace YuGeneric
                 }
             }
         }
+
 
         public static void PostOrderWithStack(BinaryTreeNode<T> node){
             var s = new Stack<BinaryTreeNode<T>>();
@@ -215,7 +220,11 @@ namespace YuGeneric
         }
 
         /// <summary>
-        /// 
+        /// 1.Firstly Join the root to queue, then start looping;
+        /// 2.In loop, Buffer the queue Front, Leave it from queue, if it has child, join into queue, from left to right;
+        /// 3.Break loop when queue is empty;
+        /// Join items that need to priorly handled to the queue, based on queue's FIFO feature
+        /// It will iterate through the tree top to down level by level
         /// </summary>
         /// <param name="root"></param>
         public static void BreadthFirstTraversal(BinaryTreeNode<T> root)
