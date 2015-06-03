@@ -49,6 +49,7 @@
     <Compile Include="MatrixOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReversePolishNotationEvaluation.cs" />
+    <Compile Include="RPNTree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

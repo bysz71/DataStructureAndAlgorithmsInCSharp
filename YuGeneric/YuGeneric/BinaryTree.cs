@@ -213,5 +213,30 @@ namespace YuGeneric
             }
             Console.WriteLine();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="root"></param>
+        public static void BreadthFirstTraversal(BinaryTreeNode<T> root)
+        {
+            var q = new Queue<BinaryTreeNode<T>>();
+            var temp = root;
+            if (temp != null)
+            {
+                q.Join(temp);
+                while (!q.IsEmpty())
+                {
+                    temp = q.Front.Value;
+                    q.Leave();
+                    Console.Write(temp.Value + " ");
+                    if (temp.Left != null)
+                        q.Join(temp.Left);
+                    if (temp.Right != null)
+                        q.Join(temp.Right);
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }

@@ -129,5 +129,18 @@ namespace UnitTestYuGeneric
             BinaryTree<int>.PostOrderWithStack(node0);
         }
 
+        [TestMethod]
+        public void BinaryTreeBreadthFirst()
+        {
+            var node5 = new BinaryTreeNode<int>(5);
+            var node4 = new BinaryTreeNode<int>(4);
+            var node3 = new BinaryTreeNode<int>(3);
+            var node2 = new BinaryTreeNode<int>(2, node5, null);
+            var node1 = new BinaryTreeNode<int>(1, node3, node4);
+            var node0 = new BinaryTreeNode<int>(0, node1, node2);
+
+            BinaryTree<int>.BreadthFirstTraversal(node0);
+        }
+
     }
 }

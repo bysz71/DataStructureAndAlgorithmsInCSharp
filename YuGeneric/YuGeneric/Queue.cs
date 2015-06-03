@@ -52,11 +52,11 @@ namespace YuGeneric
         {
             get
             {
-                return _front;
+                return _rear;
             }
             set
             {
-                _front = value;
+                _rear = value;
             }
         }
 
@@ -109,17 +109,21 @@ namespace YuGeneric
             {
                 return false;
             }
-            else if(this.Count() == 1)
+            if (this.Count() == 1)
             {
                 _front = null;
                 _rear = null;
                 return true;
             }
-            else
+
+            var current = _front;
+            while (current.Next != _rear)
             {
-                _front = _front.Next;
-                return true;
+                current = current.Next;
             }
+            current.Next = null;
+            _rear = current;
+            return true;
         }
     }
 }

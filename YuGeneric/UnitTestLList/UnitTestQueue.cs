@@ -43,7 +43,7 @@ namespace UnitTestYuGeneric
             Assert.AreEqual(queue.Front.Value, 10);
 
             queue.Join(20);
-            Assert.AreEqual(queue.Front.Value, 20);
+            Assert.AreEqual(queue.Front.Value, 10);
         }
 
         [TestMethod]
@@ -78,7 +78,7 @@ namespace UnitTestYuGeneric
             queue.Join(new QueueNode<int>(10));
             Assert.AreEqual(queue.Front.Value, 10);
             queue.Join(100);
-            Assert.AreEqual(queue.Front.Value, 100);
+            Assert.AreEqual(queue.Front.Value, 10);
             Assert.AreEqual(queue.Count(), 2);
         }
 
@@ -94,7 +94,7 @@ namespace UnitTestYuGeneric
             queue.Join(30);
             Assert.AreEqual(queue.Leave(), true);
             Assert.AreEqual(queue.Count(), 1);
-            Assert.AreEqual(queue.Front.Value, 20);
+            Assert.AreEqual(queue.Front.Value, 30);
         }
     }
 }
