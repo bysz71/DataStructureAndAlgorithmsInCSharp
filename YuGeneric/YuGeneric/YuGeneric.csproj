@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="BinarySearchTree.cs" />
     <Compile Include="BinaryTree.cs" />
+    <Compile Include="HeapList.cs" />
     <Compile Include="LList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queue.cs" />
