@@ -52,7 +52,7 @@
   <ItemGroup>
     <Compile Include="GraphTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DikstrasAlgorithmTest.cs" />
+    <Compile Include="DijkstrasAlgorithmTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Yu.DataStructure.NonGeneric\Yu.DataStructure.NonGeneric.csproj">

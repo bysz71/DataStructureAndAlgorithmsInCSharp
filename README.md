@@ -1,13 +1,17 @@
-# DataStructureAndAlgorithms
-Common data structures and algorithms implementation using c#
-For data structures I will mostly implement generic data structures, provides typical mothods provided by official generic collections
-Basicly each structure and algorithms will come with a practical task to test its functionality
+# Title: DataStructureAndAlgorithms
+-This project is about common data structures and algorithms implementation using c#
 
-List of Structures been implemented
-1, LList<T>
-  -a generic singly linked list, contains _head and _tail pointers
-  
-List of practices
-1, MatrixOperation
-  -to test LList<T>
-  -stores sparse matrix into linked list, ignore 0 values so it saves a lot of memory. Also performs addition of 2 matrices.
+#data structures with algorithms so far
+-LinkedList
+-Stack
+-Queue
+-BinaryTree (InOrder,PreOrder,PostOrder traversals (recursive and stack) BreadthFirstSearch)
+-BinarySearchTree (Search, Insert, Delete ...)
+-Heap (priority queue, using c# generic List<>)
+-Graph (Dijkstra's Algorithm)
+
+#some practices
+-BigNumberAddition (LinkedList)
+-MatrixOperation (LinkedList)
+-RPNEvaluation (Stack)
+-RPNTree (BinaryTree)
