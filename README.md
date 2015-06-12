@@ -1,17 +1,17 @@
 # Title: DataStructureAndAlgorithms
--This project is about common data structures and algorithms implementation using c#
+-This project is about common data structures and algorithms implementation using c#<br/>
 
 #data structures with algorithms so far
--LinkedList
--Stack
--Queue
--BinaryTree (InOrder,PreOrder,PostOrder traversals (recursive and stack) BreadthFirstSearch)
--BinarySearchTree (Search, Insert, Delete ...)
--Heap (priority queue, using c# generic List<>)
--Graph (Dijkstra's Algorithm)
+-LinkedList<br/>
+-Stack<br/>
+-Queue<br/>
+-BinaryTree (InOrder,PreOrder,PostOrder traversals (recursive and stack) BreadthFirstSearch)<br/>
+-BinarySearchTree (Search, Insert, Delete ...)<br/>
+-Heap (priority queue, using c# generic List<>)<br/>
+-Graph (Dijkstra's Algorithm)<br/>
 
 #some practices
--BigNumberAddition (LinkedList)
--MatrixOperation (LinkedList)
--RPNEvaluation (Stack)
--RPNTree (BinaryTree)
+-BigNumberAddition (LinkedList)<br/>
+-MatrixOperation (LinkedList)<br/>
+-RPNEvaluation (Stack)<br/>
+-RPNTree (BinaryTree)<br/>
