@@ -1,0 +1,7 @@
+C:\Github\DataStructureAndAlgorithms\YuGeneric\UnitTestLList\obj\Debug\Yu.DataStructure.GenericTest.csprojResolveAssemblyReference.cache
+C:\Github\DataStructureAndAlgorithms\YuGeneric\UnitTestLList\bin\Debug\Yu.DataStructure.GenericTest.dll
+C:\Github\DataStructureAndAlgorithms\YuGeneric\UnitTestLList\bin\Debug\Yu.DataStructure.GenericTest.pdb
+C:\Github\DataStructureAndAlgorithms\YuGeneric\UnitTestLList\bin\Debug\Yu.DataStructure.Generic.dll
+C:\Github\DataStructureAndAlgorithms\YuGeneric\UnitTestLList\bin\Debug\Yu.DataStructure.Generic.pdb
+C:\Github\DataStructureAndAlgorithms\YuGeneric\UnitTestLList\obj\Debug\Yu.DataStructure.GenericTest.dll
+C:\Github\DataStructureAndAlgorithms\YuGeneric\UnitTestLList\obj\Debug\Yu.DataStructure.GenericTest.pdb

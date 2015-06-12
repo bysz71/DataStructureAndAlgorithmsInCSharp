@@ -1,0 +1,5 @@
+C:\Github\DataStructureAndAlgorithms\YuGeneric\YuGeneric\obj\Debug\Yu.DataStructure.Generic.csprojResolveAssemblyReference.cache
+C:\Github\DataStructureAndAlgorithms\YuGeneric\YuGeneric\bin\Debug\Yu.DataStructure.Generic.dll
+C:\Github\DataStructureAndAlgorithms\YuGeneric\YuGeneric\bin\Debug\Yu.DataStructure.Generic.pdb
+C:\Github\DataStructureAndAlgorithms\YuGeneric\YuGeneric\obj\Debug\Yu.DataStructure.Generic.dll
+C:\Github\DataStructureAndAlgorithms\YuGeneric\YuGeneric\obj\Debug\Yu.DataStructure.Generic.pdb

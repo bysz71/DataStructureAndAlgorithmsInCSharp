@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuGeneric", "YuGeneric\YuGeneric.csproj", "{1A09F2E3-F75D-4A39-82D4-CE5897B3DB5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yu.DataStructure.Generic", "YuGeneric\Yu.DataStructure.Generic.csproj", "{1A09F2E3-F75D-4A39-82D4-CE5897B3DB5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestYuGeneric", "UnitTestLList\UnitTestYuGeneric.csproj", "{D50024B3-6271-4430-8151-720B218AC2A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yu.DataStructure.GenericTest", "UnitTestLList\Yu.DataStructure.GenericTest.csproj", "{D50024B3-6271-4430-8151-720B218AC2A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -6,8 +6,8 @@
     <ProjectGuid>{D50024B3-6271-4430-8151-720B218AC2A2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnitTestYuGeneric</RootNamespace>
-    <AssemblyName>UnitTestLList</AssemblyName>
+    <RootNamespace>Yu</RootNamespace>
+    <AssemblyName>Yu.DataStructure.GenericTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -59,9 +59,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\YuGeneric\YuGeneric.csproj">
+    <ProjectReference Include="..\YuGeneric\Yu.DataStructure.Generic.csproj">
       <Project>{1a09f2e3-f75d-4a39-82d4-ce5897b3db5c}</Project>
-      <Name>YuGeneric</Name>
+      <Name>Yu.DataStructure.Generic</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

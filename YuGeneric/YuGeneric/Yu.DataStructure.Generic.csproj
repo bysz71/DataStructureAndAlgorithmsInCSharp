@@ -7,8 +7,8 @@
     <ProjectGuid>{1A09F2E3-F75D-4A39-82D4-CE5897B3DB5C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>YuGeneric</RootNamespace>
-    <AssemblyName>YuGeneric</AssemblyName>
+    <RootNamespace>Yu</RootNamespace>
+    <AssemblyName>Yu.DataStructure.Generic</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

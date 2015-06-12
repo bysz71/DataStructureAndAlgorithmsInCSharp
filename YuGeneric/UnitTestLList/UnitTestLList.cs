@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using YuGeneric;
+using Yu.DataStructure.Generic;
 
 
-namespace UnitTestYuGeneric
+namespace Yu.DataStructure.GenericTest
 {
     [TestClass]
     public class UnitTestLList

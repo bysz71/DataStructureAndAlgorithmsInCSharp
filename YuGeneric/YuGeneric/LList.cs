@@ -27,7 +27,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YuGeneric
+namespace Yu.DataStructure.Generic
 {
     public class LListNode<T>
     {
