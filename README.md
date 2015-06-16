@@ -22,9 +22,32 @@ So Far List:
 	+ Search, Insert, Delete ...
 - Graph
 	+ Dijkstra's Algorithm
+- Sort
+	+Selection Sort
+	+Insertion Sort
+	+Bubble Sort
 
 <b>Some practices</b><br/>
 - BigNumberAddition (LinkedList)
 - MatrixOperation (LinkedList)
 - RPNEvaluation (Stack)
 - RPNTree (BinaryTree)
+
+Sort:
+-----
+- Selection Sort
+swap current item with currently smallest item, and move 1 item forward<br/>
+time complexity O(N^2), for{for{}}<br/>
+- Insertion Sort
+iterate to out-of-order item, insert it to its right position by shift other items from that position, and go on<br/>
+time complexity O(N^2), for{for{}}<br/>
+- Bubble Sort
+treat 2 items as a bubble, swap if needed, and move on unitil reach the end. Do this again and again until no swapping happens.
+time complexity O(N^2), while{for{}}<br/>
+
+AdvanceSort:
+------------
+- Merge Sort
+<p>Based on Merge method. Merge method merges 2 sorted array into one sorted array. Merge Sort breaks array into smallest chunks and recursively implmemt Merge.</p>
+<p>time complexity O(NlogN), because Merge is O(N) and its tree structure is O(logN)<p>
+
