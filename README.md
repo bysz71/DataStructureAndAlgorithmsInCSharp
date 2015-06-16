@@ -36,18 +36,18 @@ So Far List:
 Sort:
 -----
 - Selection Sort
-swap current item with currently smallest item, and move 1 item forward<br/>
-time complexity O(N^2), for{for{}}<br/>
+<p>swap current item with currently smallest item, and move 1 item forward.</p>
+<p>ime complexity O(N^2), for{for{}}.</p>
 - Insertion Sort
-iterate to out-of-order item, insert it to its right position by shift other items from that position, and go on<br/>
-time complexity O(N^2), for{for{}}<br/>
+<p>iterate to out-of-order item, insert it to its right position by shift other items from that position, and go on.</p>
+<p>time complexity O(N^2), for{for{}}.</p>
 - Bubble Sort
-treat 2 items as a bubble, swap if needed, and move on unitil reach the end. Do this again and again until no swapping happens.
-time complexity O(N^2), while{for{}}<br/>
+<p>treat 2 items as a bubble, swap if needed, and move on unitil reach the end. Do this again and again until no swapping happens.</p>
+<p>time complexity O(N^2), while{for{}}.<</p>
 
 AdvanceSort:
 ------------
 - Merge Sort
 <p>Based on Merge method. Merge method merges 2 sorted array into one sorted array. Merge Sort breaks array into smallest chunks and recursively implmemt Merge.</p>
-<p>time complexity O(NlogN), because Merge is O(N) and its tree structure is O(logN)<p>
+<p>time complexity O(NlogN), because Merge is O(N) and its tree structure is O(logN).<p>
 
