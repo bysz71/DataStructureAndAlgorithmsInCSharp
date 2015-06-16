@@ -6,18 +6,24 @@ Most common data structures and algorithms are already perfectly built in, usual
 <p>Using c# to implement data structure and algorithms are my very personal choice. Currently my goals include get through common data structures and algorithms, 
 and be more familiar with c# language. Although c# is not a common choice, it is perfectly capable. And implementing data structure and algorithms could also help me to understand the memory model and value/reference type of C#. </p>
 
+So Far List:
+------------
+<b>Data Structures & Algorithms</b><br/>
+- LinkedList
+- Stack
+- Queue
+- BinaryTree 
+	+ InOrder, PreOrder, PostOrder traversals DepthFirstSearch(recursive and stack)
+	+ BreadthFirstSearch (queue)<br/>
+- BinarySearchTree 
+	+ Search, Insert, Delete ...
+- Heap (priority queue)
+	+ Search, Insert, Delete ...
+- Graph
+	+ Dijkstra's Algorithm
 
-#data structures with algorithms so far
--LinkedList<br/>
--Stack<br/>
--Queue<br/>
--BinaryTree (InOrder,PreOrder,PostOrder traversals (recursive and stack) BreadthFirstSearch)<br/>
--BinarySearchTree (Search, Insert, Delete ...)<br/>
--Heap (priority queue, using c# generic List<>)<br/>
--Graph (Dijkstra's Algorithm)<br/>
-
-#some practices
--BigNumberAddition (LinkedList)<br/>
--MatrixOperation (LinkedList)<br/>
--RPNEvaluation (Stack)<br/>
--RPNTree (BinaryTree)<br/>
+<b>Some practices</b><br/>
+- BigNumberAddition (LinkedList)
+- MatrixOperation (LinkedList)
+- RPNEvaluation (Stack)
+- RPNTree (BinaryTree)
