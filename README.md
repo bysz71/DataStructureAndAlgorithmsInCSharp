@@ -49,14 +49,14 @@ AdvancedSort:
 ------------
 - Merge Sort
 <p>Based on Merge method. Merge method merges 2 sorted array into one sorted array. Merge Sort breaks array into smallest chunks and recursively implement Merge.</p>
-<p><b>Logic<b><br/>
-1. Merge()<br/>
+<p><b>Logic</b><br/>
+* Merge()<br/>
 Break array into 2 sub arrays evenly<br/>
 1st loop: put smaller value of either left or right sub array into the temporary array, until one array runs out<br/>
 (after the 1st loop ends, there must be at least 1 sub array runs out)<br/>
 2nd loop: in case left sub array does not run out (which right sub array does), add its items to temporary array<br/>
 3rd loop: in case right sub array has items and left runs out, add its items to temporary array<br/>
-2. MergeSort()<br/>
+* MergeSort()<br/>
 Break array from "first" to "last" into 2 sub array<br/>
 MergeSort left sub-array<br/>
 MergeSort right sub-array<br/>
