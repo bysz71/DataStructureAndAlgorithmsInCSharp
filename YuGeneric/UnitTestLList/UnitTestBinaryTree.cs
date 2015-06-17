@@ -141,6 +141,5 @@ namespace Yu.DataStructure.GenericTest
 
             BinaryTree<int>.BreadthFirstTraversal(node0);
         }
-
     }
 }
