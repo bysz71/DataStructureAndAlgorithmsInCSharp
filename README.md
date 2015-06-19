@@ -123,6 +123,100 @@ AdvancedSort
 		Swap pivot with the smallest right item to place pivot in between<br/>
 		Do this again to the left part and right part recursively until chunk size is 2<br/>
 	</li>
+	<li>
+		<b>Example</b><br/>
+		(italy is pivot, underline is inc, bold is dec)<br/>
+		<b>7</b> <u>3</u> 8 2 5 6 0 1 9 <u>4</u><br/>
+		//initial case, pivot == 7, data[inc] == 3, data[dec] == 4<br/>
+		<b>7</b> 3 <u>8</u> 2 5 6 0 1 9 <u>4</u><br/>
+		//data[inc] == 8, coz 8 > pivot 7, data[dec] == 4, coz 4 < pivot 7<br/>
+		<b>7</b> 3 4 2 5 6 0 <u>1</u> <u>9</u> 8<br/>
+		//swap 8 and 4; data[inc] == 9, data[dec] == 1, since dec < inc, loop ends<br/>
+		1 3 4 2 5 6 0 <b>7</b> 9 8<br/>
+		//now look at pivot, pivot 7 > data[dec] 1, swap 1 and 7, so now at left of 7 are all smaller than 7, right of 7 all greater<br/>
+		[1 3 4 2 5 6 0] 7 [9 8]<br/>
+		//now treat left of 7 as a sub-array, and right of 7 as a sub-array, look at left sub-array first, implement same method<br/>
+		[<b>1</b> <u>3</u> 4 2 5 6 <u>0</u>] 7 [9 8]<br/>
+		//initially pivot = 1, inc = 3, dec = 0<br/>
+		[<b>1</b> <u>0</u> <u>4</u> 2 5 6 3] 7 [9 8] <br/>
+		//since 3 > 1, 0 < 1, swap 3 and 0; data[inc] == 4, data[dec] == 0, dec < inc, loop ends<br/>
+		[0 <b>1</b> 4 2 5 6 3] 7 [9 8]<br/>
+		//pivot 1 > data[dec] 0, swap 0 and 1<br/>
+		[0 1 [<b>4</b> <u>2</u> 5 6 <u>3</u>]] 7 [9 8]<br/>
+		//left of pivot 1 is only 0, no sorting needed; right of 1 are treated as a sub-array now<br/>
+		//initially pivot == 4, data[inc] == 2, data[dec] == 3<br/>
+		[0 1 [<b>4</b> 2 <u>5</u> 6 <u>3</u>]] 7 [9 8]<br/>
+		//data[inc] == 5, data[dec] == 3, swap 5 and 3<br/>
+		[0 1 [<b>4</b> 2 <u>3</u> <u>5</u> 6]] 7 [9 8]<br/>
+		//5 and 3 swapped, data[inc] == 5, data[dec] == 3, dec < inc, loops ends<br/>
+		[0 1 [3 2 4 5 6]] 7 [9 8]<br/>
+		//pivot 4 > data[dec] 3, swap 4 and 3;<br/>
+		[0 1 [[3 2] 4 [5 6]]] 7 [9 8]<br/>
+		//[3 2] is left sub-array and [5 6] is right sub-array<br/>
+		//since only 2 items in a sub-array, inc and dec never moves, loop skip, jump to pivot comparing<br/>
+		[0 1 [[2 3] 4 [5 6]]] 7 [9 8]<br/>
+		//pivot 3 > data[dec] 2, swap 3 and 2nd<br/>
+		//now to right sub-array, [5 6] are good, back to upper tier; upper tier is good, back to upper tier of upper tier right sub-array [9 8]<br/>
+		[0 1 [[2 3] 4 [5 6]]] 7 [8 9]<br/>
+		//swap 9 and 8, no upper tier exists, sorting finished<br/>
+	</li>
+	<li>
+		<b>Time Complexity</b><br/>
+		O(NlogN) Pretty much like other recursive method, or like a tree, in my opinion<br/>
+	</li>
 	</ul>
 </li>
+<li><b>Radix Sort</b><br/>
+	<ul>
+	<li><b>Summary</b><br/>
+	A sorting method without comparison. Sort from smallest digit to largest digit.
+	</li>
+	<li><b>Logic</b><br/>
+	declare a queue array, array length is 10 (0-9).<br/>
+	1st tier loop, loop from smallest digit to largest digit;<br/>
+	2nd tier 1st loop, iterate through all items in input data array. Enqueue the item into the queue that the queue's index is this item's current processing digit number.<br/>
+	(this step enqueue all items to the queue array in a sorted order based on the digit we are curretly looking at).<br/>
+	2nd tier 2nd loop, iterate through the queue array. For each queue in the queue array that has items, dequeue them back to the data array.<br/>
+	(thus now the data array are some kind of sorted that their current digit are in a sorted order. And the queue array is empty now).<br/>
+	10 times the factor so we move 1 digit to the left. back to tier 1 loop and do again.<br/>
+	</li>
+	<li><b>Example</b><br/>
+	<b>data array {5, 37, 1, 61, 11, 59, 48, 19}</b><br/>
+	//initially we have this data array, we wanna sort it.<br/>
+	<table>
+	<tr><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+	<tr><td></td><td>1</td><td></td><td></td><td></td><td>5</td><td></td><td>37</td><td>48</td><td>59</td></tr>
+	<tr><td></td><td>61</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>19</td></tr>
+	<tr><td></td><td>11</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	</table>
+	//first time we look at LSB, digit 1. Enqueue to the queue list.<br/>
+	<b>data array {1, 61, 11, 5, 37, 48, 59, 19}</b><br/>
+	//iterate through the queue list and dequeue them back to the data array.<br/>
+	<table>
+	<tr><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+	<tr><td>1</td><td>11</td><td></td><td>37</td><td>48</td><td>59</td><td>61</td><td></td><td></td><td></td></tr>
+	<tr><td>5</td><td>19</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	</table>
+	//now we look at 2nd digit, enqueue items from data array to the queue array<br/>
+	<b>data array {1, 5, 11, 19, 37, 48, 59, 61}</b><br/>
+	//iterate through the queue list and dequeue them back to the data array.(now the array is pretty much sorted, but theoretically we need one more step)<br/>
+	<table>
+	<tr><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+	<tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	<tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	<tr><td>11</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	<tr><td>19</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	<tr><td>37</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	<tr><td>48</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	<tr><td>59</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	<tr><td>61</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	</table>
+	//same old same old, 3rd digit<br/>
+	<b>data array {1, 5, 11, 19, 37, 48, 59, 61}</b><br/>
+	//same as 1 step before, but now we can officially close the case.<br/>
+	</li>
+	<li>
+	<b>Time Complexity</b><br/>
+	O(KN), for K digits we have K contant loops. For each loop, we iterate through whole data array, so N. Thus K*N.<br/>
+	</li>	
 </ul>

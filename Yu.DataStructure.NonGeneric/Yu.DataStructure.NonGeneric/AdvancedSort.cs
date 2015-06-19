@@ -122,5 +122,41 @@ namespace Yu.DataStructure.NonGeneric
             }
             Console.Write("\n");
         }
+
+        /// <summary>
+        /// RadixSort
+        /// Time complexity O(KN)
+        /// </summary>
+        /// <param name="data"></param>
+        public static void RadixSort(int[] data)
+        {
+            int maxDigits = 3;
+            int factor = 1;
+            int n = 0;
+            Queue<int>[] Q = new Queue<int>[10];
+            for (int i = 0; i < 10; i++ )
+            {
+                Q[i] = new Queue<int>();
+            }
+            for (int digit = 1; digit <= maxDigits; digit++)
+            {
+                foreach (int entry in data)
+                {
+                    Q[entry / factor % 10].Enqueue(entry);
+                    Console.WriteLine("Q[" + entry / factor % 10 + "] joined " + entry);
+                }
+
+                n = 0;
+                foreach (Queue<int> entry in Q)
+                {
+                    while (entry.Count() != 0)
+                    {
+                        Console.WriteLine("n="+n);
+                        data[n++] = entry.Dequeue();
+                    }
+                }
+                factor *= 10;
+            }
+        }
     }
 }
