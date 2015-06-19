@@ -125,7 +125,7 @@ AdvancedSort
 	</li>
 	<li>
 		<b>Example</b><br/>
-		(italy is pivot, underline is inc, bold is dec)<br/>
+		(bold is pivot, inc and dec is underline, but github does not support underline)<br/>
 		<b>7</b> <u>3</u> 8 2 5 6 0 1 9 <u>4</u><br/>
 		//initial case, pivot == 7, data[inc] == 3, data[dec] == 4<br/>
 		<b>7</b> 3 <u>8</u> 2 5 6 0 1 9 <u>4</u><br/>
@@ -218,5 +218,6 @@ AdvancedSort
 	<li>
 	<b>Time Complexity</b><br/>
 	O(KN), for K digits we have K contant loops. For each loop, we iterate through whole data array, so N. Thus K*N.<br/>
+	O(KN) is very fast, but need extra space, and queue oprations are not counted in the performance analysis. The actually performance very much depend on how you implement<br/>
 	</li>	
 </ul>

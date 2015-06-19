@@ -55,6 +55,7 @@
     <Compile Include="DijkstrasAlgorithmTest.cs" />
     <Compile Include="SortTest.cs" />
     <Compile Include="AdvancedSortTest.cs" />
+    <Compile Include="HeapTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Yu.DataStructure.NonGeneric\Yu.DataStructure.NonGeneric.csproj">
