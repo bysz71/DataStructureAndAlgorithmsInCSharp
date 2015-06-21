@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Yu.DataStructure.NonGeneric
 {
-    public class AdvancedSort
+    public class BinarySort
     {
         /// <summary>
         /// Merge Sort Recursively

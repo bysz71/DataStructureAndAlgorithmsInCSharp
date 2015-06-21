@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Yu.DataStructure.NonGeneric
 {
-    public class Sort
+    public class LinearSort
     {
         /// <summary>
         /// SelectionSorting

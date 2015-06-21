@@ -11,7 +11,7 @@ namespace Yu.DataStructure.NonGenericTest
         public void TestSelectionSort()
         {
             int[] array = { 4, 7, 2, 3, 9, 8, 0, 1, 5, 6 };
-            Sort.SelectionSort(array);
+            LinearSort.SelectionSort(array);
             foreach (int i in array)
             {
                 Console.Write(i + " ");
@@ -22,7 +22,7 @@ namespace Yu.DataStructure.NonGenericTest
         public void TestInsertionSort()
         {
             int[] array = { 4, 7, 2, 3, 9, 8, 0, 1, 5, 6 };
-            Sort.InsertionSort(array);
+            LinearSort.InsertionSort(array);
             foreach (int i in array)
             {
                 Console.Write(i + " ");
@@ -33,7 +33,7 @@ namespace Yu.DataStructure.NonGenericTest
         public void TestBubbleSort()
         {
             int[] array = { 4, 7, 2, 3, 9, 8, 0, 1, 5, 6 };
-            Sort.BubbleSort(array);
+            LinearSort.BubbleSort(array);
             foreach (int i in array)
             {
                 Console.Write(i + " ");

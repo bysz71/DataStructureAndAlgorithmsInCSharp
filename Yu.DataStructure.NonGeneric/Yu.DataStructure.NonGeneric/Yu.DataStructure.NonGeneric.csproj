@@ -39,12 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdvancedSort.cs" />
+    <Compile Include="BinarySort.cs" />
     <Compile Include="DijkstrasAlgorithm.cs" />
     <Compile Include="Graph.cs" />
     <Compile Include="Heap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sort.cs" />
+    <Compile Include="LinearSort.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
