@@ -170,6 +170,7 @@ Binary Sort [code](https://github.com/scottszb1987/DataStructureAndAlgorithms/bl
 	<ul>
 	<li><b>Summary</b><br/>
 	A sorting method without comparison. Sort from smallest digit to largest digit.
+	This is <b>NOT</b> a binary sort! Place in here temporarily.
 	</li>
 	<li><b>Logic</b><br/>
 	declare a queue array, array length is 10 (0-9).<br/>
