@@ -161,6 +161,8 @@ namespace Yu.DataStructure.NonGeneric
 
         /// <summary>
         /// use heap to sort
+        /// Similar to merge and quick sort
+        /// Time complexity O(NlogN)
         /// </summary>
         /// <param name="data"></param>
         public static void HeapSort(int[] data)
