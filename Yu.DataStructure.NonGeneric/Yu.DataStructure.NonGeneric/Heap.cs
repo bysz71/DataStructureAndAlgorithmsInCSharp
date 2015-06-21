@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Yu.DataStructure.Generic
+namespace Yu.DataStructure.NonGeneric
 {
     public class Heap
     {
@@ -29,7 +29,7 @@ namespace Yu.DataStructure.Generic
             }
 
             _list.Add(item);
-            if (_list.Count() == 0) return;
+            if (_list.Count() == 1) return;
 
             int motherIndex = 0;
             int childIndex = _list.Count() - 1;
@@ -53,23 +53,26 @@ namespace Yu.DataStructure.Generic
         /// Delete largest value of the heap which is the root
         /// </summary>
         /// <returns></returns>
-        public bool DeleteRoot()
+        public int DeleteRoot()
         {
+            int result;
             //empty heap case
-            if (_list.Count() == 0)
-            {
-                Console.WriteLine("Error: Empty heap");
-                return false;
-            }
+            //if (_list.Count() == 0)
+            //{
+                //Console.WriteLine("Error: Empty heap");
+                //return null;
+            //}
 
             //one item cases
             if (_list.Count() == 1)
             {
+                result = _list[0];
                 _list.RemoveAt(0);
-                return true;
+                return result;
             }
 
             //other cases
+            result = _list[0];
             _list[0] = _list[_list.Count() - 1];
             _list.RemoveAt(_list.Count() - 1);
             //swap
@@ -106,7 +109,7 @@ namespace Yu.DataStructure.Generic
                 }
                 else break;
             }
-            return true;
+            return result;
         }
 
         /// <summary>
@@ -121,6 +124,15 @@ namespace Yu.DataStructure.Generic
         }
 
         /// <summary>
+        /// Return how many items in the heap
+        /// </summary>
+        /// <returns></returns>
+        public int Count()
+        {
+            return _list.Count();
+        }
+
+        /// <summary>
         /// print the whole heap
         /// </summary>
         public void Print()
@@ -128,6 +140,13 @@ namespace Yu.DataStructure.Generic
             foreach (int item in _list)
                 Console.Write(item + " ");
             Console.Write("\n");
+        }
+
+        public void Swap(int indexLeft, int indexRight)
+        {
+            int buff = _list[indexLeft];
+            _list[indexLeft] = _list[indexRight];
+            _list[indexRight] = buff;
         }
     }
 }

@@ -48,5 +48,16 @@ namespace Yu.DataStructure.NonGenericTest
                 Console.Write(i + " ");
             }
         }
+
+        [TestMethod]
+        public void TestHeapSort()
+        {
+            int[] data = new int[] { 5, 37, 1, 61, 11, 59, 48, 19 };
+            AdvancedSort.HeapSort(data);
+            foreach (int i in data)
+            {
+                Console.Write(i + " ");
+            }
+        }
     }
 }

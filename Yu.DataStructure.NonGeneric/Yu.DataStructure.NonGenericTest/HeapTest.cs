@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Yu.DataStructure.Generic;
+using Yu.DataStructure.NonGeneric;
 using System.Collections.Generic;
 
-namespace Yu.DataStructure.GenericTest
+namespace Yu.DataStructure.NonGenericTest
 {
     [TestClass]
     public class UnitTestHeap

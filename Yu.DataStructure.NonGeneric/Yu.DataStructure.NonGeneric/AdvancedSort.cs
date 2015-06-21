@@ -158,5 +158,23 @@ namespace Yu.DataStructure.NonGeneric
                 factor *= 10;
             }
         }
+
+        /// <summary>
+        /// use heap to sort
+        /// </summary>
+        /// <param name="data"></param>
+        public static void HeapSort(int[] data)
+        {
+            var heap = new Heap();
+            foreach (int i in data)
+            {
+                heap.Insert(i);
+            }
+
+            for (int j = 0; heap.Count() > 0; j++)
+            {
+                data[j] = heap.DeleteRoot();
+            }
+        }
     }
 }
