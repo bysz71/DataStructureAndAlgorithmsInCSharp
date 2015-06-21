@@ -55,8 +55,9 @@ So Far List
 </li>
 </ul>
 
-Linear Sort [code](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/Yu.DataStructure.NonGeneric/Yu.DataStructure.NonGeneric/Sort.cs)
+Linear Sort 
 -----------
+[[code](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/Yu.DataStructure.NonGeneric/Yu.DataStructure.NonGeneric/Sort.cs)]
 <ul>
 <li><b>Selection Sort</b>
 	<ul>
@@ -81,8 +82,9 @@ Linear Sort [code](https://github.com/scottszb1987/DataStructureAndAlgorithms/bl
 	</ul>
 </ul>
 
-Binary Sort [code](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/Yu.DataStructure.NonGeneric/Yu.DataStructure.NonGeneric/AdvancedSort.cs)
-------------------
+Binary Sort
+-----------
+[[code](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/Yu.DataStructure.NonGeneric/Yu.DataStructure.NonGeneric/AdvancedSort.cs)]
 <ul>
 <li><b>Merge Sort</b>
 	<ul>
