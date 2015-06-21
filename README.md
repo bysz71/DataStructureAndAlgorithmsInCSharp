@@ -220,6 +220,7 @@ AdvancedSort
 	O(KN), for K digits we have K contant loops. For each loop, we iterate through whole data array, so N. Thus K*N.<br/>
 	O(KN) is very fast, but need extra space, and queue oprations are not counted in the performance analysis. The actually performance very much depend on how you implement<br/>
 	</li>
+	</ul>
 </li>
 <li><b>Heap Sort</b><br/>
 	<ul>
@@ -234,5 +235,6 @@ AdvancedSort
 	<li><b>Time complexity</b><br/>
 	O(NlogN). Every Delete() of heap costs logN, thus N items cost NlogN.<br/>
 	</li>
+	</ul>
 </li>
 </ul>
