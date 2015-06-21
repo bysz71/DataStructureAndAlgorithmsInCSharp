@@ -55,7 +55,7 @@ So Far List
 </li>
 </ul>
 
-Sort
+Sort [code](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/Yu.DataStructure.NonGeneric/Yu.DataStructure.NonGeneric/Sort.cs)
 ----
 <ul>
 <li><b>Selection Sort</b>
@@ -81,7 +81,7 @@ Sort
 	</ul>
 </ul>
 
-AdvancedSort
+AdvancedSort [code](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/Yu.DataStructure.NonGeneric/Yu.DataStructure.NonGeneric/AdvancedSort.cs)
 ------------
 <ul>
 <li><b>Merge Sort</b>
