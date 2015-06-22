@@ -127,40 +127,88 @@ Binary Sort
 	</li>
 	<li>
 		<b>Example</b><br/>
-		(bold is pivot, inc and dec is underline, but github does not support underline)<br/>
-		<b>7</b> <u>3</u> 8 2 5 6 0 1 9 <u>4</u><br/>
-		//initial case, pivot == 7, data[inc] == 3, data[dec] == 4<br/>
+		<b>P for pivot, I for inc(index increment), D for dec(index decrement)</b><br/>
+		<table>
+		<tr><td>7</td><td>3</td><td>8</td><td>2</td><td>5</td><td>6</td><td>0</td><td>1</td><td>9</td><td>4</td></tr>
+		<tr><td>P</td><td>I</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td>D</td></tr>
+		</table>
+		Initial case, pivot -> 7, inc -> 3, dec -> 4<br/>
 		<b>7</b> 3 <u>8</u> 2 5 6 0 1 9 <u>4</u><br/>
-		//data[inc] == 8, coz 8 > pivot 7, data[dec] == 4, coz 4 < pivot 7<br/>
-		<b>7</b> 3 4 2 5 6 0 <u>1</u> <u>9</u> 8<br/>
-		//swap 8 and 4; data[inc] == 9, data[dec] == 1, since dec < inc, loop ends<br/>
-		1 3 4 2 5 6 0 <b>7</b> 9 8<br/>
-		//now look at pivot, pivot 7 > data[dec] 1, swap 1 and 7, so now at left of 7 are all smaller than 7, right of 7 all greater<br/>
-		[1 3 4 2 5 6 0] 7 [9 8]<br/>
-		//now treat left of 7 as a sub-array, and right of 7 as a sub-array, look at left sub-array first, implement same method<br/>
-		[<b>1</b> <u>3</u> 4 2 5 6 <u>0</u>] 7 [9 8]<br/>
-		//initially pivot = 1, inc = 3, dec = 0<br/>
-		[<b>1</b> <u>0</u> <u>4</u> 2 5 6 3] 7 [9 8] <br/>
-		//since 3 > 1, 0 < 1, swap 3 and 0; data[inc] == 4, data[dec] == 0, dec < inc, loop ends<br/>
-		[0 <b>1</b> 4 2 5 6 3] 7 [9 8]<br/>
-		//pivot 1 > data[dec] 0, swap 0 and 1<br/>
-		[0 1 [<b>4</b> <u>2</u> 5 6 <u>3</u>]] 7 [9 8]<br/>
-		//left of pivot 1 is only 0, no sorting needed; right of 1 are treated as a sub-array now<br/>
-		//initially pivot == 4, data[inc] == 2, data[dec] == 3<br/>
-		[0 1 [<b>4</b> 2 <u>5</u> 6 <u>3</u>]] 7 [9 8]<br/>
-		//data[inc] == 5, data[dec] == 3, swap 5 and 3<br/>
-		[0 1 [<b>4</b> 2 <u>3</u> <u>5</u> 6]] 7 [9 8]<br/>
-		//5 and 3 swapped, data[inc] == 5, data[dec] == 3, dec < inc, loops ends<br/>
-		[0 1 [3 2 4 5 6]] 7 [9 8]<br/>
-		//pivot 4 > data[dec] 3, swap 4 and 3;<br/>
-		[0 1 [[3 2] 4 [5 6]]] 7 [9 8]<br/>
-		//[3 2] is left sub-array and [5 6] is right sub-array<br/>
-		//since only 2 items in a sub-array, inc and dec never moves, loop skip, jump to pivot comparing<br/>
+		<table>
+		<tr><td>7</td><td>3</td><td>8</td><td>2</td><td>5</td><td>6</td><td>0</td><td>1</td><td>9</td><td>4</td></tr>
+		<tr><td>P</td><td> </td><td>I</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td>D</td></tr>
+		</table>
+		Inc -> 8 (8 > pivot); dec -> 4 (4 < pivot)<br/>
+		<table>
+		<tr><td>7</td><td>3</td><td>4</td><td>2</td><td>5</td><td>6</td><td>0</td><td>1</td><td>9</td><td>8</td></tr>
+		<tr><td>P</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td>D</td><td>I</td><td> </td></tr>
+		</table>
+		Swap 8 and 4 ; inc -> 9, dex -> 1 ; inc > dec (not the value they point, but their index), loop ends.<br/>
+		<table>
+		<tr><td>1</td><td>3</td><td>4</td><td>2</td><td>5</td><td>6</td><td>0</td><td>7</td><td>9</td><td>8</td></tr>
+		<tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td>P</td><td> </td><td> </td></tr>
+		</table>
+		Now loop at pivot, coz pivot 7 > dec 1, swap 7 and 1 (Now we can see that left of 7 are all smaller than 7, right of 7 are all larger)<br/>
+		<table>
+		<tr><td>1</td><td>3</td><td>4</td><td>2</td><td>5</td><td>6</td><td>0</td><td> </td><td>7</td><td> </td><td>9</td><td>8</td></tr>
+		<tr><td>P</td><td>I</td><td> </td><td> </td><td> </td><td> </td><td>D</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		</table>
+		Now treat left of 7 as a sub-array, and right of 7 as another sub-array, look at left sub-array first, implement same method<br/>
+		Pivot -> 1 , inc -> 3, dec -> 0<br/>
+		<table>
+		<tr><td>1</td><td>3</td><td>4</td><td>2</td><td>5</td><td>6</td><td>0</td><td> </td><td>7</td><td> </td><td>9</td><td>8</td></tr>
+		<tr><td>P</td><td>I</td><td> </td><td> </td><td> </td><td> </td><td>D</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		</table>
+		Inc still at 3 (3 > pivot), dec still at 0 (0 < pivot)<br/>
+		<table>
+		<tr><td>1</td><td>0</td><td>4</td><td>2</td><td>5</td><td>6</td><td>3</td><td> </td><td>7</td><td> </td><td>9</td><td>8</td></tr>
+		<tr><td>P</td><td>D</td><td>I</td><td> </td><td> </td><td> </td><td>D</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		</table>
+		Swap 3 and 0 ; inc -> 4, dec -> 0 ; inc > dec , loop ends.<br/>
+		<table>
+		<tr><td>0</td><td>1</td><td>4</td><td>2</td><td>5</td><td>6</td><td>3</td><td> </td><td>7</td><td> </td><td>9</td><td>8</td></tr>
+		<tr><td> </td><td>P</td><td> </td><td> </td><td> </td><td> </td><td>D</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		</table>
+		Pivot 1 > dec 0, swap 1 and 0<br/>
+		<table>
+		<tr><td>0</td><td> </td><td>1</td><td> </td><td>4</td><td>2</td><td>5</td><td>6</td><td>3</td><td> </td><td>7</td><td> </td><td>9</td><td>8</td></tr>
+		<tr><td> </td><td> </td><td> </td><td> </td><td>P</td><td>I</td><td> </td><td> </td><td>D</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		</table>
+		Left of pivot 1 is only 0, no sorting needed ; look at right sub-array 4 to 3<br/>
+		Pivot -> 4, inc -> 2, dec -> 3<br/>
+		<table>
+		<tr><td>0</td><td> </td><td>1</td><td> </td><td>4</td><td>2</td><td>5</td><td>6</td><td>3</td><td> </td><td>7</td><td> </td><td>9</td><td>8</td></tr>
+		<tr><td> </td><td> </td><td> </td><td> </td><td>P</td><td> </td><td>I</td><td> </td><td>D</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		</table>
+		Inc -> 5 , dec -> 3<br/>
+		<table>
+		<tr><td>0</td><td> </td><td>1</td><td> </td><td>4</td><td>2</td><td>3</td><td>6</td><td>5</td><td> </td><td>7</td><td> </td><td>9</td><td>8</td></tr>
+		<tr><td> </td><td> </td><td> </td><td> </td><td>P</td><td> </td><td>D</td><td>I</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		</table>
+		Swap 5 and 3 ; inc -> 6 , dec -> 3 ; inc > dec , loop ends.<br/>
+		<table>
+		<tr><td>0</td><td> </td><td>1</td><td> </td><td>3</td><td>2</td><td>4</td><td>6</td><td>5</td><td> </td><td>7</td><td> </td><td>9</td><td>8</td></tr>
+		<tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td>P</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		</table>		
+		Pivot 4 > dec 3 , swap 4 and 3<br/>
+		<table>
+		<tr><td>0</td><td> </td><td>1</td><td> </td><td>3</td><td>2</td><td> </td><td>4</td><td> </td><td>6</td><td>5</td><td> </td><td>7</td><td> </td><td>9</td><td>8</td></tr>
+		<tr><td> </td><td> </td><td> </td><td> </td><td>P</td><td>ID</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		</table>
+		3 and 2 is left sub-array, 6 and 5 is right sub-array. Look at left sub-array first.
+		Only 2 items, inc and dec are same and not movable. Pivot -> 3 , Inc = Dec ->2.<br/>
 		[0 1 [[2 3] 4 [5 6]]] 7 [9 8]<br/>
-		//pivot 3 > data[dec] 2, swap 3 and 2nd<br/>
-		//now to right sub-array, [5 6] are good, back to upper tier; upper tier is good, back to upper tier of upper tier right sub-array [9 8]<br/>
-		[0 1 [[2 3] 4 [5 6]]] 7 [8 9]<br/>
-		//swap 9 and 8, no upper tier exists, sorting finished<br/>
+		<table>
+		<tr><td>0</td><td> </td><td>1</td><td> </td><td>2</td><td> </td><td>3</td><td> </td><td>4</td><td> </td><td>5</td><td> </td><td>6</td><td> </td><td>7</td><td> </td><td>9</td><td>8</td></tr>
+		<tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td>P</td><td>ID</td></tr>
+		</table>
+		Pivot 3 > dec 2, Swap 3 and 2.<br/>
+		Look at right sub-array 6 and 5, same situation, swap 6 and 5<br/>
+		Back to earliest right sub-array [9  8]<br/>
+		<table>
+		<tr><td>0</td><td> </td><td>1</td><td> </td><td>2</td><td> </td><td>3</td><td> </td><td>4</td><td> </td><td>5</td><td> </td><td>6</td><td> </td><td>7</td><td> </td><td>8</td><td> </td><td>9</td></tr>
+		</table>
+		Same situation, swap 9 and 8. Array sorted.<br/>
 	</li>
 	<li>
 		<b>Time Complexity</b><br/>
@@ -177,34 +225,35 @@ Binary Sort
 	<li><b>Logic</b><br/>
 		<ol>
 		<li>declare a queue array, array length is 10 (0-9).</li>
-		<li>1st tier loop, loop from smallest digit to largest digit;</li>
-		<li>2nd tier 1st loop, iterate through all items in input data array. Enqueue the item into the queue that the queue's index is this item's current processing digit number.<br/>
-		(this step enqueue all items to the queue array in a sorted order based on the digit we are curretly looking at).</li>
-		<li>2nd tier 2nd loop, iterate through the queue array. For each queue in the queue array that has items, dequeue them back to the data array.<br/>
-		(thus now the data array are some kind of sorted that their current digit are in a sorted order. And the queue array is empty now).</li>
-		<li>10 times the factor so we move 1 digit to the left. back to tier 1 loop and do again.</li>
+		<li>1st tier loop, loop from smallest digit to largest digit, this loop contains 2 2nd tier loops below</li>
+		<li>2nd tier 1st loop, iterate through all items in input data array. Repeatedly enqueue the item into the queue that the queue's index is the current processing digit.
+		(At this step all items are stored in the queue array based on current processing digit)</li>
+		<li>2nd tier 2nd loop, iterate through the queue array. For each queue in the queue array that has items, dequeue them back to the data array.
+		(Now the data array is restored in an order of sorting by current processing digit, and the queue array is empty)</li>
+		<li>Back to 1st tier loop, 10 times the factor so we move 1 digit to the left. Carry on to next turn.</li>
 		</ol>
 	</li>
 	<li><b>Example</b><br/>
 	<b>data array {5, 37, 1, 61, 11, 59, 48, 19}</b><br/>
-	//initially we have this data array, we wanna sort it.<br/>
+	Initially we have this data array, we wanna sort it.
 	<table>
 	<tr><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
 	<tr><td></td><td>1</td><td></td><td></td><td></td><td>5</td><td></td><td>37</td><td>48</td><td>59</td></tr>
 	<tr><td></td><td>61</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>19</td></tr>
 	<tr><td></td><td>11</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 	</table>
-	//firstly we look at LSB, digit 1. Enqueue to the queue list.<br/>
+	Firstly we look at least significant bit, digit 1. Enqueue the data array to the queue array based on digit 1.<br/>
 	<b>data array {1, 61, 11, 5, 37, 48, 59, 19}</b><br/>
-	//iterate through the queue list and dequeue them back to the data array.<br/>
+	After the queue array is restored, dequeue them back to the data array, now digit 1 is sorted.<br/>
 	<table>
 	<tr><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
 	<tr><td>1</td><td>11</td><td></td><td>37</td><td>48</td><td>59</td><td>61</td><td></td><td></td><td></td></tr>
 	<tr><td>5</td><td>19</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 	</table>
-	//now we look at 2nd digit, enqueue items from data array to the queue array<br/>
+	Now move to digit 2, enqueue data array into queue array based on digit 2.<br/>
 	<b>data array {1, 5, 11, 19, 37, 48, 59, 61}</b><br/>
-	//iterate through the queue list and dequeue them back to the data array.(now the array is pretty much sorted, but theoretically we need one more step)<br/>
+	After the queue array is restored, dequeue them back to the data array, now digit 2 is sorted.<br/>
+	(the data array is pretty much sorted, but we still need to continue in case that digit 3 is existed)<br/>
 	<table>
 	<tr><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
 	<tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -216,14 +265,14 @@ Binary Sort
 	<tr><td>59</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 	<tr><td>61</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 	</table>
-	//same old same old, 3rd digit<br/>
+	Same old, 3rd digit. Now only '0' in digit 3 has items.<br/>
 	<b>data array {1, 5, 11, 19, 37, 48, 59, 61}</b><br/>
-	//same as 1 step before, but now we can officially close the case.<br/>
+	Dequeue them back to data array, data array is sorted.<br/>
 	</li>
 	<li>
 	<b>Time Complexity</b><br/>
-	O(KN), for K digits we have K contant loops. For each loop, we iterate through whole data array, so N. Thus K*N.<br/>
-	O(KN) is very fast, but need extra space, and queue oprations are not counted in the performance analysis. The actually performance very much depend on how you implement<br/>
+	O(KN), for K digits we have K constant loops. For each loop, we iterate through whole data array, so N. Thus K*N.<br/>
+	O(KN) is very fast, but need extra space, and queue operations are not counted in the performance analysis. The actually performance very much depend on how you implement<br/>
 	</li>
 	</ul>
 </li>
@@ -233,9 +282,10 @@ Binary Sort
 	Use the "root always largest" feature of heap to sort.<br/>
 	</li>
 	<li><b>Logic</b><br/>
-	Insert all items to the heap.<br/>
-	Delete(return) the root value back to the array.<br/>
-	Sorted.<br/>
+		<ol>
+		<li>Insert all items to the heap.</li>
+		<li>Delete(return) the root value back to the array.</li>
+		</ol>
 	</li>
 	<li><b>Time complexity</b><br/>
 	O(NlogN). Every Delete() of heap costs logN, thus N items cost NlogN.<br/>
