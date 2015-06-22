@@ -175,13 +175,15 @@ Binary Sort
 	This is <b>NOT</b> a binary sort! Place in here temporarily.
 	</li>
 	<li><b>Logic</b><br/>
-	declare a queue array, array length is 10 (0-9).<br/>
-	1st tier loop, loop from smallest digit to largest digit;<br/>
-	2nd tier 1st loop, iterate through all items in input data array. Enqueue the item into the queue that the queue's index is this item's current processing digit number.<br/>
-	(this step enqueue all items to the queue array in a sorted order based on the digit we are curretly looking at).<br/>
-	2nd tier 2nd loop, iterate through the queue array. For each queue in the queue array that has items, dequeue them back to the data array.<br/>
-	(thus now the data array are some kind of sorted that their current digit are in a sorted order. And the queue array is empty now).<br/>
-	10 times the factor so we move 1 digit to the left. back to tier 1 loop and do again.<br/>
+		<ol>
+		<li>declare a queue array, array length is 10 (0-9).</li>
+		<li>1st tier loop, loop from smallest digit to largest digit;</li>
+		<li>2nd tier 1st loop, iterate through all items in input data array. Enqueue the item into the queue that the queue's index is this item's current processing digit number.<br/>
+		(this step enqueue all items to the queue array in a sorted order based on the digit we are curretly looking at).</li>
+		<li>2nd tier 2nd loop, iterate through the queue array. For each queue in the queue array that has items, dequeue them back to the data array.<br/>
+		(thus now the data array are some kind of sorted that their current digit are in a sorted order. And the queue array is empty now).</li>
+		<li>10 times the factor so we move 1 digit to the left. back to tier 1 loop and do again.</li>
+		</ol>
 	</li>
 	<li><b>Example</b><br/>
 	<b>data array {5, 37, 1, 61, 11, 59, 48, 19}</b><br/>
@@ -192,7 +194,7 @@ Binary Sort
 	<tr><td></td><td>61</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>19</td></tr>
 	<tr><td></td><td>11</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 	</table>
-	//first time we look at LSB, digit 1. Enqueue to the queue list.<br/>
+	//firstly we look at LSB, digit 1. Enqueue to the queue list.<br/>
 	<b>data array {1, 61, 11, 5, 37, 48, 59, 19}</b><br/>
 	//iterate through the queue list and dequeue them back to the data array.<br/>
 	<table>
