@@ -68,6 +68,15 @@ Heap
 <ul>
 <li>
 	<b>Summary</b>
+	<p>Heap is a self balanced binary tree. Its largest leaf height difference is at most 1.
+	It has the feature that at any level, a node is always larger(or smaller, depend on your decision) than its children.
+	No matter what order you use to push items in heap, its root value is always the largest(or smallest) in the tree.
+	Thus every time you pop the root, it will be the largest(or smallest) value, and heap will re-balance so that new root will become the new largest value.
+	That is why Heap is also called priority queue.</p>
+	
+	<p>A heap is only a logical tree, we do not have to implement it using a real tree.
+	In this circumstance, a List (vector) is more suitable that its random access feature makes operations much faster.
+	To implement the re-balance feature, both Insert() method and DeleteRoot() method need to involve re-balance function.</p>	
 </li>
 </ul>
 
