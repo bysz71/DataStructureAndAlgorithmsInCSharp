@@ -83,9 +83,17 @@ Heap
 	<ul>
 	<li>
 		<b>Using List</b><br/>
-		Heap tree:
-		<img src="https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/HeapTree.PNG?raw=true" alt="Heap Tree">
-		Heap list:
+		Heap tree:<br/>
+		<img src="https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/Images/HeapTree.PNG?raw=true" alt="Heap Tree">
+		Heap list:<br/>
+		<img src="https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/Images/HeapList.PNG?raw=true" alt="Heap List">
+		As you can see, the 1st images shows the logical heap tree, and the 2nd images shows the List implementation of the heap tree in the first image.
+		From the heap list image you can easily get a conclusion that: <br/>
+		        leftChildIndex = parentIndex * 2 + 1;<br/>
+		        rightChildIndex = parentIndex * 2 + 2;<br/>
+		Or we can say: <br/>
+		        parentIndex = (childIndex - 1) / 2;<br/>
+				(Workds for both children, because in Integer Division, 4/2 and 5/2 gives the same result)<br/>
 		
 	</li>
 	</ul>
