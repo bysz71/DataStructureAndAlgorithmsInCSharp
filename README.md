@@ -78,6 +78,16 @@ Heap
 	In this circumstance, a List (vector) is more suitable that its random access feature makes operations much faster.
 	To implement the re-balance feature, both Insert() method and DeleteRoot() method need to involve re-balance function.</p>	
 </li>
+<li>
+	<b>Logic</b>
+	<ul>
+	<li>
+		<b>Using List</b><br/>
+		Heap tree example:<br/>
+		
+	</li>
+	</ul>
+</li>
 </ul>
 
 Graph and Dijkstra's Algorithm
