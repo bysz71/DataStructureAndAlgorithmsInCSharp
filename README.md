@@ -4,8 +4,8 @@ Description:
 ------------
 <p>This project is about using c# to implement common data structures and algorithms. C# is a very engineering type language, it is very efficiency at developing and cooperating.
 Most common data structures and algorithms are already perfectly built in, usually people do not use c# to study structure and algorithms.</p>
-<p>Using c# to implement data structure and algorithms is my very personal choice. Currently my goals include get through common data structures and algorithms, 
-and be more familiar with c# language. Although c# is not a common choice, it is perfectly capable. And implementing data structure and algorithms could also help me to understand the memory model and value/reference type of C#. </p>
+<p>Using c# to implement data structure and algorithms is my very personal choice. Currently my goals include to get through common data structures and algorithms, 
+and to be more familiar with c# language. Although c# is not a common choice, it is perfectly capable. And implementing data structure and algorithms could also help me to understand the memory model and value/reference type of C#. </p>
 
 So Far List
 -----------
@@ -36,11 +36,19 @@ So Far List
 		<li>Dijkstra's Algorithm</li>
 		</ul>
 	</li>
-	<li>Sort
+	<li>Linear Sort
 		<ul>
 		<li>Selection Sort</li>
 		<li>Insertion Sort</li>
 		<li>Bubble Sort</li>
+		</ul>
+	</li>
+	<li>Binary Sort
+		<ul>
+		<li>Merge Sort</li>
+		<li>Quicksort</li>
+		<li>Radix Sort</li>
+		<li>Heap Sort</li>
 		</ul>
 	</li>
 	</ul>
@@ -54,6 +62,14 @@ So Far List
 	</ul>
 </li>
 </ul>
+Heap
+----
+[[code](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/Yu.DataStructure.NonGeneric/Yu.DataStructure.NonGeneric/Heap.cs)]
+<ul>
+<li>
+	<b>Summary</b>
+</li>
+</ul>
 
 Graph and Dijkstra's Algorithm
 ----------------------------
@@ -65,7 +81,10 @@ Graph and Dijkstra's Algorithm
 	<ul>
 	<li>
 	<b>Graph</b><br/>
-	<p>Graph is a set of Nodes that each Node could point to or be pointed by any other Nodes. The connection between each Nodes are called Edges, Edge has a cost property. The cost of each edge may vary.</p>
+	<p>Graph is a set of Nodes that each Node could point to or be pointed by any other Nodes. 
+	The connection between each Nodes are called Edges, Edge has a cost property. The cost of each edge may vary. 
+	Edges also has direction, from A to B and from B to A are different. 
+	In those cases that edges do not have directions, it should be treated like A to B and B to A are all existed and their cost are the same.</p>
 	<p>In my code the Graph class is based on List of LinkedList. Each LinkedList in the List represents a node in the graph.
 	Each Element in the LinkedList possesses 2 properties, a node mark (a letter) and a cost, means the destination and the Edge cost.
 	The first element of the LinkedList represent the Node itself, and its cost is 0.</p>
@@ -87,7 +106,8 @@ Graph and Dijkstra's Algorithm
 	Set start node's distance to 0 , status to true (is final) ; Set all other node's distance to infinity (practically a very big number) , status to false (not final).
 	</li>
 	<li>
-	Initially "current" starts from the start node (as in the input parameter). Take the current node as a temporary start node, update all the node's current distances (in d) by picking the smaller value from its old value and the (current start node's distance(in d) plus destiny node's edge cost).
+	Initially "current" starts from the start node (as in the input parameter). 
+	Take the current node as a temporary start node, update all the node's current distances (in d) by picking the smaller value from its old value and the (current start node's distance(in d) plus destiny node's edge cost).
 	</li>
 	<li>
 	In all the node's that status are not final yet (in s), find the one with smallest distance (in d). Set it as next turn current node, and set its status to final (true).
@@ -218,7 +238,7 @@ Binary Sort
 		Swap 3 and 0 ; inc -> 4, dec -> 0 ; inc > dec , loop ends.<br/>
 		<table>
 		<tr><td>0</td><td>1</td><td>4</td><td>2</td><td>5</td><td>6</td><td>3</td><td> </td><td>7</td><td> </td><td>9</td><td>8</td></tr>
-		<tr><td> </td><td>P</td><td> </td><td> </td><td> </td><td> </td><td>D</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		<tr><td> </td><td>P</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
 		</table>
 		Pivot 1 > dec 0, swap 1 and 0<br/>
 		<table>
