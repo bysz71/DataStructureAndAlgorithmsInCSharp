@@ -84,7 +84,7 @@ Heap
 	<li>
 		<b>Using List</b><br/>
 		Heap tree example:<br/>
-		![Heap Tree](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/HeapTree.PNG?raw=true)
+		![alt text](https://raw.githubusercontent.com/scottszb1987/DataStructureAndAlgorithms/master/HeapTree.PNG "Heap Tree")
 	</li>
 	</ul>
 </li>
