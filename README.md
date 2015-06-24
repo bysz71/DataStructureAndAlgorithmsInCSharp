@@ -68,15 +68,15 @@ Heap
 <ul>
 <li>
 	<b>Summary</b>
-	<p>Heap is a self balanced binary tree. Its largest leaf height difference is at most 1.
+	<p>Heap is a self balanced binary tree. Its any 2 leaves heights difference is at most 1.
 	It has the feature that at any level, a node is always larger(or smaller, depend on your decision) than its children.
 	No matter what order you use to push items in heap, its root value is always the largest(or smallest) in the tree.
-	Thus every time you pop the root, it will be the largest(or smallest) value, and heap will re-balance so that new root will become the new largest value.
+	Thus every time you pop the root, it will be the largest(or smallest) value, and heap will re-construct so that new root will become the new largest value.
 	That is why Heap is also called priority queue.</p>
 	
 	<p>A heap is only a logical tree, we do not have to implement it using a real tree.
 	In this circumstance, a List (vector) is more suitable that its random access feature makes operations much faster.
-	To implement the re-balance feature, both Insert() method and DeleteRoot() method need to involve re-balance function.</p>	
+	To implement the re-construct feature, both Insert() method and DeleteRoot() method need to involve re-construct function.</p>	
 </li>
 <li>
 	<b>Logic</b>
@@ -96,8 +96,17 @@ Heap
 		Or we can say: <br/>
 		<ul>
 			<li>parentIndex = (childIndex - 1) / 2;<br/>
-			(Workds for both children, because in Integer Division, 4/2 and 5/2 gives the same result)</li>
+			(Works for both children, because in Integer Division, 4/2 and 5/2 gave the same result)</li>
 		</ul>
+	</li>
+	<li>
+		<b>Insert() method</b><br/>
+		Insert an item to heap. Need to make sure the heap still follow heap's rules.
+		<ol>
+		<li>Add an item to the end of the list.</li>
+		<li>If its value is larger than its parent's value, swap them. </li>
+		<li>Repeat step 2 above, until this value's parent value no longer smaller than itself. </li>
+		</ol>
 	</li>
 	</ul>
 </li>
