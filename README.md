@@ -88,6 +88,9 @@ Heap
 		Heap list:<br/>
 		<img src="https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/Images/HeapList.PNG?raw=true" alt="Heap List"><br/>
 		As you can see, the 1st images shows the logical heap tree, and the 2nd images shows the List implementation of the heap tree in the first image.
+	</li>
+	<li>
+		<b>Indexing</b><br/>
 		From the heap list image you can easily conclude that: <br/>
 		<ul>
 			<li>leftChildIndex = parentIndex * 2 + 1;</li>
@@ -108,7 +111,19 @@ Heap
 		<li>Repeat step 2 above, until this value's parent value no longer smaller than itself. </li>
 		</ol>
 	</li>
+	<li>
+		<b>DeleteRoot() method</b><br/>
+		<ol>
+		<li>Swap root value with the last node's value, remove the last node.</li>
+		<li>Swap the new root value with its larger child.</li>
+		<li>Repeat step 2 above, until it reaches leaf or got no children that larger than itself.</li>
+		</ol>
+	</li>
 	</ul>
+</li>
+<li>
+	<b>Example</b><br/>
+	(Under construction).
 </li>
 </ul>
 
