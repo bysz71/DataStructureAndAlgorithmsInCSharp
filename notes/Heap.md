@@ -1,5 +1,4 @@
-Heap
-----
+#Heap
 [[Full code]](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/Yu.DataStructure.NonGeneric/Yu.DataStructure.NonGeneric/Heap.cs)
 
 #Summary
@@ -11,7 +10,7 @@ Heap is an implementation of priority queue which provides good time complexity 
 * In a heap, no matter what order you use to push items into heap, the heap will re-construct to make sure it meets the 2 
 requirements above.
 	
-#Logic
+#Logic and code snippet
 * **Implementing using generic.List**  
 A heap is just a logical tree, we do not have to implement it using a real tree. In this circumstance, a List (vector) is 
 more suitable that its random access feature makes operations much faster.  
@@ -150,5 +149,5 @@ public class Heap
         }
   ```  
 #Time complexity
-Push and Pop are both O(logn)  
-See [balanced tree's search time complexity]()
+Push and Pop are both O(log(n))  
+See [balanced binary tree's search time complexity](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/notes/BalancedBinaryTreeSearchComplexity.md)
