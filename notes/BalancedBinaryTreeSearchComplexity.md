@@ -1,4 +1,4 @@
-#Search time complexity for a balanced binary tre
+#Search time complexity for a balanced binary tree
 (this note is not rigorous, just to give a general idea)
 * Firstly, refer to Big O Notation. See [A beginner's guide to Big O notation(Rob Bell)](https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation)
 * for a balanced binary tree, generally its search time complexity of the worst case should be equal to the max-height of the tree.
