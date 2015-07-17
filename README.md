@@ -1,16 +1,8 @@
-Common Data Structure And Algorithms Implementation Using C#
-============================================================
-
-Description:
-------------
-<p>This project is about using c# to implement common data structures and algorithms. C# is a very engineering type language, it is very efficiency at developing and cooperating.
-Most common data structures and algorithms are already perfectly built in, usually people do not use c# to study structure and algorithms.</p>
-<p>Using c# to implement data structure and algorithms is my very personal choice. Currently my goals include to get through common data structures and algorithms, 
-and to be more familiar with c# language. Although c# is not a common choice, it is perfectly capable. And implementing data structure and algorithms could also help me to understand the memory model and value/reference type of C#. </p>
+#Common Data Structure And Algorithms Implementation Using C#
 
 Preface
 --------
-<p>Using C# to implement data structure and algorithms seems redundant, because C# provides everything developers need to let them focus on applcation layer. But to me, it is actually a good choice. C# is perfectly capable of implementing data structure and algorithms in a desired depth. To do so does not only help me to go over data structure and algorithms which in my opinion is an essential knowledge for any programmer, it also helped me to gain better understanding on the OO and memory aspects of C# language.
+Using C# to implement data structure and algorithms seems redundant, because C# provides everything developers need to let them focus on applcation layer. But to me, it is actually a good choice. C# is perfectly capable of implementing data structure and algorithms in a desired depth. To do so does not only help me to go over data structure and algorithms which in my opinion is an essential knowledge for any programmer, it also helped me to gain better understanding on the OO and memory aspects of C# language.
 
 So Far List
 -----------
