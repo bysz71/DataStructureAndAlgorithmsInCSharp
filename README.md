@@ -13,7 +13,7 @@ So Far List
 * Queue
 * BinaryTree
 * BinarySearchTree 
-* [heap](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/notes/Heap.md)
+* [Heap](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/notes/Heap.md)
 * Graph(Dijkstra's Algorithm)
 * Linear Sort
   + Selection Sort
