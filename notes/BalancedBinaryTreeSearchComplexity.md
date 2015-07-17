@@ -27,3 +27,6 @@ Thus we say the time complexity would be O(log(n))
 Again this is not rigorous, refer to CLRS, generally people use mathematical induction to prove time complexity, although I could
  not do it for now :(  
 Please comment if you think you can correct or improve this.
+
+-------------------
+to be deleted
