@@ -1,18 +1,16 @@
 Common Data Structure And Algorithms Implementation Using C#
 ============================================================
-<<<<<<< HEAD
+
 Description:
 ------------
 <p>This project is about using c# to implement common data structures and algorithms. C# is a very engineering type language, it is very efficiency at developing and cooperating.
 Most common data structures and algorithms are already perfectly built in, usually people do not use c# to study structure and algorithms.</p>
 <p>Using c# to implement data structure and algorithms is my very personal choice. Currently my goals include to get through common data structures and algorithms, 
 and to be more familiar with c# language. Although c# is not a common choice, it is perfectly capable. And implementing data structure and algorithms could also help me to understand the memory model and value/reference type of C#. </p>
-=======
+
 Preface
 --------
 <p>Using C# to implement data structure and algorithms seems redundant, because C# provides everything developers need to let them focus on applcation layer. But to me, it is actually a good choice. C# is perfectly capable of implementing data structure and algorithms in a desired depth. To do so does not only help me to go over data structure and algorithms which in my opinion is an essential knowledge for any programmer, it also helped me to gain better understanding on the OO and memory aspects of C# language.
-
->>>>>>> parent of d41a5d4... Update README.md
 
 So Far List
 -----------
@@ -33,10 +31,7 @@ So Far List
 		<li>Search, Insert, Delete ...</li>
 		</ul>
 	</li>
-	<li>Heap (priority queue)
-		<ul>
-		<li>Search, Insert, Delete ...</li>
-		</ul>
+	<li>[heap](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/notes/Heap.md)
 	</li>
 	<li>Graph
 		<ul>
@@ -67,70 +62,6 @@ So Far List
 	<li>RPNEvaluation (Stack)</li>
 	<li>RPNTree (BinaryTree)</li>
 	</ul>
-</li>
-</ul>
-Heap
-----
-[[code](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/Yu.DataStructure.NonGeneric/Yu.DataStructure.NonGeneric/Heap.cs)]
-<ul>
-<li>
-	<b>Summary</b>
-	<p>Heap is a self balanced binary tree. Its any 2 leaves heights difference is at most 1.
-	It has the feature that at any level, a node is always larger(or smaller, depend on your decision) than its children.
-	No matter what order you use to push items in heap, its root value is always the largest(or smallest) in the tree.
-	Thus every time you pop the root, it will be the largest(or smallest) value, and heap will re-construct so that new root will become the new largest value.
-	That is why Heap is also called priority queue.</p>
-	
-	<p>A heap is only a logical tree, we do not have to implement it using a real tree.
-	In this circumstance, a List (vector) is more suitable that its random access feature makes operations much faster.
-	To implement the re-construct feature, both Insert() method and DeleteRoot() method need to involve re-construct function.</p>	
-</li>
-<li>
-	<b>Logic</b>
-	<ul>
-	<li>
-		<b>Using List</b><br/>
-		Heap tree:<br/>
-		<img src="https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/Images/HeapTree.PNG?raw=true" alt="Heap Tree"><br/>
-		Heap list:<br/>
-		<img src="https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/Images/HeapList.PNG?raw=true" alt="Heap List"><br/>
-		As you can see, the 1st images shows the logical heap tree, and the 2nd images shows the List implementation of the heap tree in the first image.
-	</li>
-	<li>
-		<b>Indexing</b><br/>
-		From the heap list image you can easily conclude that: <br/>
-		<ul>
-			<li>leftChildIndex = parentIndex * 2 + 1;</li>
-			<li>rightChildIndex = parentIndex * 2 + 2;</li>
-		</ul>
-		Or we can say: <br/>
-		<ul>
-			<li>parentIndex = (childIndex - 1) / 2;<br/>
-			(Works for both children, because in Integer Division, 4/2 and 5/2 gave the same result)</li>
-		</ul>
-	</li>
-	<li>
-		<b>Insert() method</b><br/>
-		Insert an item to heap. Need to make sure the heap still follow heap's rules.
-		<ol>
-		<li>Add an item to the end of the list.</li>
-		<li>If its value is larger than its parent's value, swap them. </li>
-		<li>Repeat step 2 above, until this value's parent value no longer smaller than itself. </li>
-		</ol>
-	</li>
-	<li>
-		<b>DeleteRoot() method</b><br/>
-		<ol>
-		<li>Swap root value with the last node's value, remove the last node.</li>
-		<li>Swap the new root value with its larger child.</li>
-		<li>Repeat step 2 above, until it reaches leaf or got no children that larger than itself.</li>
-		</ol>
-	</li>
-	</ul>
-</li>
-<li>
-	<b>Example</b><br/>
-	(Under construction).
 </li>
 </ul>
 
