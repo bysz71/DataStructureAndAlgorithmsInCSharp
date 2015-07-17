@@ -7,56 +7,29 @@ Using C# to implement data structure and algorithms seems redundant, because C# 
 
 So Far List
 -----------
-<ul>
-<li><b>Data Structures & Algorithms</b><br/>
-	<ul>
-	<li>LinkedList</li>
-	<li>Stack</li>
-	<li>Queue</li>
-	<li>BinaryTree 
-		<ul>
-		<li>InOrder, PreOrder, PostOrder traversals DepthFirstSearch(recursive and stack)</li>
-		<li>BreadthFirstSearch (queue)</li>
-		</ul>
-	</li>
-	<li>BinarySearchTree 
-		<ul>
-		<li>Search, Insert, Delete ...</li>
-		</ul>
-	</li>
-	<li>[heap](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/notes/Heap.md)
-	</li>
-	<li>Graph
-		<ul>
-		<li>Dijkstra's Algorithm</li>
-		</ul>
-	</li>
-	<li>Linear Sort
-		<ul>
-		<li>Selection Sort</li>
-		<li>Insertion Sort</li>
-		<li>Bubble Sort</li>
-		</ul>
-	</li>
-	<li>Binary Sort
-		<ul>
-		<li>Merge Sort</li>
-		<li>Quicksort</li>
-		<li>Radix Sort</li>
-		<li>Heap Sort</li>
-		</ul>
-	</li>
-	</ul>
-</li>
-<li><b>Some practices</b><br/>
-	<ul>
-	<li>BigNumberAddition (LinkedList)</li>
-	<li>MatrixOperation (LinkedList)</li>
-	<li>RPNEvaluation (Stack)</li>
-	<li>RPNTree (BinaryTree)</li>
-	</ul>
-</li>
-</ul>
+###Data Structures & Algorithms:
+* LinkedList
+* Stack
+* Queue
+* BinaryTree
+* BinarySearchTree 
+* [heap](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/notes/Heap.md)
+* Graph(Dijkstra's Algorithm)
+* Linear Sort
+  + Selection Sort
+  + Insertion Sort
+  + Bubble Sort
+* Binary Sort
+  + Merge Sort
+  + Quicksort
+  + Radix Sort
+  + Heap Sort
+
+###Some practices
+* BigNumberAddition (LinkedList)
+* MatrixOperation (LinkedList)
+* RPNEvaluation (Stack)
+* RPNTree (BinaryTree)
 
 Graph and Dijkstra's Algorithm
 ----------------------------
