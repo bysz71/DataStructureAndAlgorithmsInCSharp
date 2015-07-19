@@ -22,7 +22,6 @@ So Far List
 * Binary Sort
   + [Merge Sort](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/notes/MergeSort.md)
   + [Quicksort](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/notes/QuickSort.md)
-
   + [Heap Sort](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/notes/HeapSort.md)
 * Other Sort
   + [Radix Sort](https://github.com/scottszb1987/DataStructureAndAlgorithms/blob/master/notes/RadixSort.md)
