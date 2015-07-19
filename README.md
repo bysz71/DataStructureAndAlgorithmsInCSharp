@@ -5,7 +5,7 @@ Preface
 --------
 Using C# to implement data structure and algorithms seems redundant, because C# provides everything developers need to let them focus on applcation layer. I personally chose to do so based on several reasons. Although C# is not the best choice to study and explain data structure and algorithms, C# is perfectly capable of implementing them in a desired depth. To do so does not only help me to go over data structure and algorithms which in my opinion is an essential knowledge for any programmer, it also helped me to gain better understanding on the OO and memory aspects of C# language.
 
-So Far List
+Index (so far)
 -----------
 ###Data Structures & Algorithms:
 * LinkedList
