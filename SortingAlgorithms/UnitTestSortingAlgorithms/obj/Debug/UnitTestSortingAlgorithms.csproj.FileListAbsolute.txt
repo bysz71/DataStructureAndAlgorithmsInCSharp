@@ -1,0 +1,7 @@
+C:\Github\DataStructureAndAlgorithms\SortingAlgorithms\UnitTestSortingAlgorithms\bin\Debug\UnitTestSortingAlgorithms.dll
+C:\Github\DataStructureAndAlgorithms\SortingAlgorithms\UnitTestSortingAlgorithms\bin\Debug\UnitTestSortingAlgorithms.pdb
+C:\Github\DataStructureAndAlgorithms\SortingAlgorithms\UnitTestSortingAlgorithms\bin\Debug\SortingAlgorithms.dll
+C:\Github\DataStructureAndAlgorithms\SortingAlgorithms\UnitTestSortingAlgorithms\bin\Debug\SortingAlgorithms.pdb
+C:\Github\DataStructureAndAlgorithms\SortingAlgorithms\UnitTestSortingAlgorithms\obj\Debug\UnitTestSortingAlgorithms.csprojResolveAssemblyReference.cache
+C:\Github\DataStructureAndAlgorithms\SortingAlgorithms\UnitTestSortingAlgorithms\obj\Debug\UnitTestSortingAlgorithms.dll
+C:\Github\DataStructureAndAlgorithms\SortingAlgorithms\UnitTestSortingAlgorithms\obj\Debug\UnitTestSortingAlgorithms.pdb
