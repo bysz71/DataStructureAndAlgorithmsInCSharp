@@ -1,5 +1,0 @@
-C:\Github\DataStructureAndAlgorithms\SortingAlgorithms\SortingAlgorithms\bin\Debug\SortingAlgorithms.dll
-C:\Github\DataStructureAndAlgorithms\SortingAlgorithms\SortingAlgorithms\bin\Debug\SortingAlgorithms.pdb
-C:\Github\DataStructureAndAlgorithms\SortingAlgorithms\SortingAlgorithms\obj\Debug\SortingAlgorithms.csprojResolveAssemblyReference.cache
-C:\Github\DataStructureAndAlgorithms\SortingAlgorithms\SortingAlgorithms\obj\Debug\SortingAlgorithms.dll
-C:\Github\DataStructureAndAlgorithms\SortingAlgorithms\SortingAlgorithms\obj\Debug\SortingAlgorithms.pdb

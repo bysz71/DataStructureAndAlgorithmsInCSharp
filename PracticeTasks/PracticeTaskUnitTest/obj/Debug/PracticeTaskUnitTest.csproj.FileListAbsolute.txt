@@ -1,9 +1,0 @@
-C:\Github\DataStructureAndAlgorithms\PracticeTasks\PracticeTaskUnitTest\obj\Debug\PracticeTaskUnitTest.csprojResolveAssemblyReference.cache
-C:\Github\DataStructureAndAlgorithms\PracticeTasks\PracticeTaskUnitTest\bin\Debug\PracticeTaskUnitTest.dll
-C:\Github\DataStructureAndAlgorithms\PracticeTasks\PracticeTaskUnitTest\bin\Debug\PracticeTaskUnitTest.pdb
-C:\Github\DataStructureAndAlgorithms\PracticeTasks\PracticeTaskUnitTest\bin\Debug\PracticeTasks.exe
-C:\Github\DataStructureAndAlgorithms\PracticeTasks\PracticeTaskUnitTest\bin\Debug\YuGeneric.dll
-C:\Github\DataStructureAndAlgorithms\PracticeTasks\PracticeTaskUnitTest\bin\Debug\PracticeTasks.pdb
-C:\Github\DataStructureAndAlgorithms\PracticeTasks\PracticeTaskUnitTest\bin\Debug\YuGeneric.pdb
-C:\Github\DataStructureAndAlgorithms\PracticeTasks\PracticeTaskUnitTest\obj\Debug\PracticeTaskUnitTest.dll
-C:\Github\DataStructureAndAlgorithms\PracticeTasks\PracticeTaskUnitTest\obj\Debug\PracticeTaskUnitTest.pdb

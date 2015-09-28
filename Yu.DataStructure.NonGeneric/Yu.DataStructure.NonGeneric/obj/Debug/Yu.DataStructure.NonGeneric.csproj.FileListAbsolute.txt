@@ -1,5 +1,0 @@
-C:\Github\DataStructureAndAlgorithms\Yu.DataStructure.NonGeneric\Yu.DataStructure.NonGeneric\bin\Debug\Yu.DataStructure.NonGeneric.dll
-C:\Github\DataStructureAndAlgorithms\Yu.DataStructure.NonGeneric\Yu.DataStructure.NonGeneric\bin\Debug\Yu.DataStructure.NonGeneric.pdb
-C:\Github\DataStructureAndAlgorithms\Yu.DataStructure.NonGeneric\Yu.DataStructure.NonGeneric\obj\Debug\Yu.DataStructure.NonGeneric.csprojResolveAssemblyReference.cache
-C:\Github\DataStructureAndAlgorithms\Yu.DataStructure.NonGeneric\Yu.DataStructure.NonGeneric\obj\Debug\Yu.DataStructure.NonGeneric.dll
-C:\Github\DataStructureAndAlgorithms\Yu.DataStructure.NonGeneric\Yu.DataStructure.NonGeneric\obj\Debug\Yu.DataStructure.NonGeneric.pdb
